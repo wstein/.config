@@ -1,0 +1,29 @@
+{
+    // Highlight Comments!
+    // -------------------
+    "editor.tokenColorCustomizations": {
+        "[Dracula]": {
+            "comments": "#FF6E6E"
+        },
+        "textMateRules": [
+            {
+                "scope": "comment",
+                "settings": {
+                    "fontStyle": "italic bold"
+                }
+            }
+        ]
+    },
+    "editor.fontFamily": "'FiraCode NF','Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontLigatures": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "modifications",
+    "telemetry.enableTelemetry": false,
+    "telemetry.enableCrashReporter": false,
+    "workbench.colorTheme": "Dracula",
+    "[dockerfile]": {
+        "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+    },
+    "window.zoomLevel": 1,
+    "git.autofetch": true
+}

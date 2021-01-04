@@ -1,0 +1,20 @@
+{
+    "channel_rollback_max_history": 1,
+    "shell_scripts": {
+        "enabled": true,
+        "location": "~/.local/bin"
+    },
+    "update": {
+        "filter": {
+            "quality_filter": {
+                "order_value": 10000
+            }
+        }
+    },
+    "privacy_policy": {
+        "eua_accepted_version": "1.2"
+    },
+    "statistics": {
+        "allow": false
+    }
+}
