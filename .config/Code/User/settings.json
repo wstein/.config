@@ -14,16 +14,32 @@
             }
         ]
     },
-    "editor.fontFamily": "'FiraCode NF','Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
-    "editor.fontLigatures": true,
+    "editor.fontFamily": "'FiraCode NF', 'FiraCode Nerd Font', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontLigatures": "'ss04', 'ss06', 'ss07', 'zero'",
     "editor.formatOnSave": true,
     "editor.formatOnSaveMode": "modifications",
+    "git.autofetch": true,
+    "shellformat.effectLanguages": [
+        "shellscript",
+        "dockerfile",
+        "dotenv",
+        "hosts",
+        "jvmoptions",
+        "ignore",
+        "gitignore",
+        "properties",
+        "spring-boot-properties",
+        "azcli"
+    ],
+    "[shellscript]": {
+        "files.eol": "\n",
+        "editor.tabSize": 2
+    },
     "telemetry.enableTelemetry": false,
     "telemetry.enableCrashReporter": false,
     "workbench.colorTheme": "Dracula",
     "[dockerfile]": {
         "editor.defaultFormatter": "ms-azuretools.vscode-docker"
     },
-    "window.zoomLevel": 1,
-    "git.autofetch": true
+    "window.zoomLevel": 0,
 }
