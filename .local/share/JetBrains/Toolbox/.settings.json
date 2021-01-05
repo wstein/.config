@@ -4,6 +4,11 @@
         "enabled": true,
         "location": "~/.local/bin"
     },
+    "network": {
+        "keystore": {
+            "location": "/etc/pki/java/cacerts"
+        }
+    },
     "update": {
         "filter": {
             "quality_filter": {
