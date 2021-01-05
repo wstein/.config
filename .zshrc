@@ -2,14 +2,14 @@ source $HOME/.local/bin/antigen.zsh
 
 # helper to check if command is available
 isvalid() {
-    command -v $1 >/dev/null
+	command -v $1 >/dev/null
 }
 
 # helper to define alias, only if target command is available
 myalias() {
-    typeset ALIAS=$(cut -d= -f1 <<<$1)
-    typeset COMMAND=$(cut -d= -f2- <<<$1)
-    isvalid $COMMAND && alias $ALIAS=$COMMAND
+	typeset ALIAS=$(cut -d= -f1 <<<$1)
+	typeset COMMAND=$(cut -d= -f2- <<<$1)
+	isvalid $COMMAND && alias $ALIAS=$COMMAND
 }
 
 # extend path
@@ -53,4 +53,9 @@ myalias open=xdg-open
 # global definitions
 export EDITOR=vim
 
-source ~/.config/p10k/rainbow-dracula-unicode.zsh
+# To customize prompt, run $(p10k configure).
+if [ -n "$SSH_TTY" ] || [ -n "$P10K_LEAN_THEME" ] || [ "$TERM" = "linux" ]; then
+	source "$HOME/.config/p10k/lean-ansi.zsh"
+else
+	source "$HOME/.config/p10k/rainbow-dracula-unicode.zsh"
+fi
