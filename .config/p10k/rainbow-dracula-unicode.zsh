@@ -188,8 +188,21 @@
 
   #################################[ os_icon: os identifier ]##################################
   # OS identifier color.
-  typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=232
-  typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND=$COLOR7_WHITE
+
+  if [ -f /.dockerenv ]; then
+    # docker container
+    typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=33
+    typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND=$COLOR0_BLACK
+  elif [ -f /run/.containerenv ]; then
+    # podman container
+    typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=9
+    typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND=$COLOR0_BLACK
+  else
+    # no container
+    typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=232
+    typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND=$COLOR7_WHITE
+  fi
+
   # Custom icon.
   # typeset -g POWERLEVEL9K_OS_ICON_CONTENT_EXPANSION='⭐'
 
