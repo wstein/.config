@@ -41,5 +41,6 @@
     "[dockerfile]": {
         "editor.defaultFormatter": "ms-azuretools.vscode-docker"
     },
-    "window.zoomLevel": 0,
+    "terminal.integrated.shell.linux": "/usr/bin/zsh",
+    "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
 }
