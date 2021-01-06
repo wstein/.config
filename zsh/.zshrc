@@ -55,7 +55,7 @@ export EDITOR=vim
 
 # To customize prompt, run $(p10k configure).
 if [ -n "$SSH_TTY" ] || [ -n "$P10K_LEAN_THEME" ] || [ "$TERM" = "linux" ]; then
-	source "$HOME/.config/p10k/lean-ansi.zsh"
+	source "$HOME/.config/zsh/lean-ansi.zsh"
 else
-	source "$HOME/.config/p10k/rainbow-dracula-unicode.zsh"
+	source "$HOME/.config/zsh/rainbow-dracula-unicode.zsh"
 fi
