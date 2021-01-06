@@ -1,32 +1,23 @@
 /*
 
 !/.gitignore
-!/.zshrc
 
-!/.config/
-/.config/*
-!/.config/kitty/
-!/.config/p10k/
-!/.config/sakura/
+!/kitty/
+!/zsh/
+!/sakura/
+!/.vscode/
 
-!/.config/Code/
-/.config/Code/*
-!/.config/Code/User/
-/.config/Code/User/*
-!/.config/Code/User/settings.json
+!/Code/
+/Code/*
+!/Code/User/
+/Code/User/*
+!/Code/User/settings.json
 
-!/.config/JetBrains/
-/.config/JetBrains/*
-!/.config/JetBrains/IntelliJIdea2020.3/
-/.config/JetBrains/IntelliJIdea2020.3/*
-!/.config/JetBrains/IntelliJIdea2020.3/colors/
-
-!/.local/
-/.local/*
-!/.local/share/
-/.local/share/*
-!/.local/share/JetBrains/
-/.local/share/JetBrains/*
-!/.local/share/JetBrains/Toolbox/
-/.local/share/JetBrains/Toolbox/*
-!/.local/share/JetBrains/Toolbox/.settings.json
+!/JetBrains/
+/JetBrains/*
+!/JetBrains/IntelliJIdea2020.3/
+/JetBrains/IntelliJIdea2020.3/*
+!/JetBrains/IntelliJIdea2020.3/colors/
+!/JetBrains/Toolbox/
+/JetBrains/Toolbox/*
+!/JetBrains/Toolbox/.settings.json
