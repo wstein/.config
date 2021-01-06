@@ -20,14 +20,14 @@
 'builtin' 'setopt' 'no_aliases' 'no_sh_glob' 'brace_expand'
 
 () {
-  typeset COLOR0_BLACK='#21222c'
-  typeset COLOR1_RED='#ff5555'
-  typeset COLOR2_GREEN='#50fa7b'
-  typeset COLOR3_YELLOW='#f1fa8c'
-  typeset COLOR4_BLUE='#bd93f9'
-  typeset COLOR5_MAGENTA='#ff79c6'
-  typeset COLOR6_CYAN='#8be9fd'
-  typeset COLOR7_WHITE='#f8f8f2'
+  typeset COLOR0_BLACK=0 #21222c
+  typeset COLOR1_RED=1 #ff5555
+  typeset COLOR2_GREEN=2 #50fa7b
+  typeset COLOR3_YELLOW=3 #f1fa8c
+  typeset COLOR4_BLUE=4 #bd93f9
+  typeset COLOR5_MAGENTA=5 #ff79c6
+  typeset COLOR6_CYAN=6 #8be9fd
+  typeset COLOR7_WHITE=7 #f8f8f2
 
   emulate -L zsh -o extended_glob
 
