@@ -6,6 +6,7 @@
 !/zsh/
 !/sakura/
 !/.vscode/
+/.vscode/extensions/
 
 !/Code/
 /Code/*
