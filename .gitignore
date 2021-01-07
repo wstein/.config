@@ -16,9 +16,9 @@
 
 !/JetBrains/
 /JetBrains/*
-!/JetBrains/IntelliJIdea2020.3/
-/JetBrains/IntelliJIdea2020.3/*
-!/JetBrains/IntelliJIdea2020.3/colors/
+!/JetBrains/*/
+/JetBrains/*/*
+!/JetBrains/*/colors/
 !/JetBrains/Toolbox/
 /JetBrains/Toolbox/*
 !/JetBrains/Toolbox/.settings.json
