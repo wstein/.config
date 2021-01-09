@@ -10,11 +10,11 @@
         "dracula-theme.theme-dracula",
         "eamodio.gitlens",
         "EditorConfig.EditorConfig",
+        "heaths.vscode-guid",
+        "mechatroner.rainbow-csv",
         "mhutchie.git-graph",
         "oderwat.indent-rainbow",
-        "phplasma.csv-to-table",
         "shaharkazaz.git-merger",
-        "heaths.vscode-guid"
     ],
     // List of extensions recommended by VS Code that should not be recommended for users of this workspace.
     "unwantedRecommendations": []
