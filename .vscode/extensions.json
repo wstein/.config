@@ -13,8 +13,10 @@
         "heaths.vscode-guid",
         "mechatroner.rainbow-csv",
         "mhutchie.git-graph",
+        "ms-vscode-remote.remote-containers",
+        "ms-vscode-remote.remote-ssh",
         "oderwat.indent-rainbow",
-        "shaharkazaz.git-merger",
+        "shaharkazaz.git-merger"
     ],
     // List of extensions recommended by VS Code that should not be recommended for users of this workspace.
     "unwantedRecommendations": []
