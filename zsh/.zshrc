@@ -47,9 +47,6 @@ antigen apply
 
 # aliases
 myalias ls=exa
-myalias vim=nvim
-myalias open=xdg-open
-
 # global definitions
 export EDITOR=vim
 
