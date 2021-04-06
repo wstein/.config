@@ -216,7 +216,7 @@
     typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND=$COLOR0_BLACK
   elif [ -f /run/.containerenv ]; then
     # podman container
-    typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=9
+    typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=$COLOR5_MAGENTA
     typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND=$COLOR0_BLACK
   else
     # no container
