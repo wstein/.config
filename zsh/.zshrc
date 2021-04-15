@@ -6,10 +6,16 @@ isvalid() {
 }
 
 # helper to define alias, only if target command is available
-myalias() {
-	typeset ALIAS=$(cut -d= -f1 <<<$1)
-	typeset COMMAND=$(cut -d= -f2- <<<$1)
-	isvalid $COMMAND && alias $ALIAS=$COMMAND
+lsalias() {
+	typeset ALIAS=${1%=*}
+	typeset VALUE=${1##*=}
+	typeset COMMAND=${VALUE%% *}
+	typeset PARAMETER=${VALUE#* }
+	if isvalid ${COMMAND}; then
+		alias $ALIAS="$VALUE"
+	else
+		alias $ALIAS="ls $PARAMETER"
+	fi
 }
 
 # extend path
@@ -46,12 +52,17 @@ antigen theme romkatv/powerlevel10k
 antigen apply
 
 # aliases
-myalias ls=exa
+alias ls="ls --color=tty"
+lsalias ll="exa -l"
+lsalias lla="exa -al"
+lsalias llg="exa -l --git"
+lsalias llag="exa -al --git"
+
 # global definitions
 export EDITOR=vim
 
 # To customize prompt, run $(p10k configure).
-if [ -n "$SSH_TTY" ] || [ -n "$P10K_LEAN_THEME" ] || [ "$TERM" = "linux" ]; then
+if [ -n "$P10K_LEAN_THEME" ] || [ "$TERM" = "linux" ]; then
 	source "$HOME/.config/zsh/lean-ansi.zsh"
 else
 	source "$HOME/.config/zsh/rainbow-dracula-unicode.zsh"
