@@ -1,9 +1,20 @@
-source $HOME/.local/bin/antigen.zsh
+#!/bin/env zsh
+
+source "${HOME}"/.local/bin/antigen.zsh
+
+# ========================== HELPER start =============================
 
 # helper to check if command is available
 isvalid() {
-	command -v $1 >/dev/null
+	command -v "$1" >/dev/null
 }
+
+# create folder inclusive parents and change to folder
+mkcd() {
+	mkdir -p "$1" && cd "$1" || exit
+}
+
+# -------------------------- local HELPER -----------------------------
 
 # helper to define alias, only if target command is available
 lsalias() {
@@ -11,15 +22,17 @@ lsalias() {
 	typeset VALUE=${1##*=}
 	typeset COMMAND=${VALUE%% *}
 	typeset PARAMETER=${VALUE#* }
-	if isvalid ${COMMAND}; then
-		alias $ALIAS="$VALUE"
+	if isvalid "${COMMAND}"; then
+		alias "${ALIAS}"="${VALUE}"
 	else
-		alias $ALIAS="ls $PARAMETER"
+		alias "${ALIAS}"="ls ${PARAMETER}"
 	fi
 }
 
+# ========================== HELPER end ===============================
+
 # extend path
-export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
+export PATH="${HOME}/bin:${HOME}/.local/bin:${PATH}"
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
@@ -62,8 +75,10 @@ lsalias llag="exa -al --git"
 export EDITOR=vim
 
 # To customize prompt, run $(p10k configure).
-if [ -n "$P10K_LEAN_THEME" ] || [ "$TERM" = "linux" ]; then
-	source "$HOME/.config/zsh/lean-ansi.zsh"
+if [ -n "${P10K_LEAN_THEME}" ] || [ "${TERM}" = "linux" ]; then
+	source "${HOME}/.config/zsh/lean-ansi.zsh"
 else
-	source "$HOME/.config/zsh/rainbow-dracula-unicode.zsh"
+	source "${HOME}/.config/zsh/rainbow-dracula-unicode.zsh"
 fi
+
+unfunction lsalias
