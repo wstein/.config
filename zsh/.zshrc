@@ -70,6 +70,8 @@ lsalias ll="exa -l"
 lsalias lla="exa -al"
 lsalias llg="exa -l --git"
 lsalias llag="exa -al --git"
+alias dockrun='docker run -it --rm -e TERM -v /etc/timezone:/etc/timezone:ro -v /etc/localtime:/etc/localtime -v /var/run/docker.sock:/var/run/docker.sock -v $PWD:/mnt -w /mnt -e HOST_GROUPNAME=`id --name --group` -e HOST_USERNAME=`id --name --user` -e HOST_GID=`id --group` -e HOST_UID=`id --user`'
+alias dockrunx='dockrun -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix'
 
 # global definitions
 export EDITOR=vim
