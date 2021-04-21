@@ -21,7 +21,7 @@
 
 () {
   # https://jonasjacek.github.io/colors/
-  if [ "$COLORTERM" = "truecolor" ]; then
+  if [ "$COLORTERM" = "truecolor0" ]; then
     typeset COLOR0_BLACK='#212222'
     typeset COLOR1_RED='#ff5555'
     typeset COLOR2_GREEN='#50fa7b'
