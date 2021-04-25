@@ -4,8 +4,9 @@
 !/.gemrc
 
 !/kitty/
-!/zsh/
+!/nvim/
 !/sakura/
+!/zsh/
 !/.vscode/
 /.vscode/extensions/
 
