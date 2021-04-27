@@ -65,7 +65,7 @@ antigen theme romkatv/powerlevel10k
 antigen apply
 
 # aliases
-alias ls="ls --color=tty"
+alias ls="ls --color=auto"
 lsalias ll="exa -l"
 lsalias lla="exa -al"
 lsalias llg="exa -l --git"
