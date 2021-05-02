@@ -1,5 +1,4 @@
 #!/bin/env zsh
-
 source "${HOME}"/.local/bin/antigen.zsh
 
 # ========================== HELPER start =============================
@@ -20,12 +19,12 @@ mkcd() {
 lsalias() {
 	typeset ALIAS=${1%=*}
 	typeset VALUE=${1##*=}
-	typeset COMMAND=${VALUE%% *}
-	typeset PARAMETER=${VALUE#* }
-	if isvalid "${COMMAND}"; then
-		alias "${ALIAS}"="${VALUE}"
-	else
-		alias "${ALIAS}"="ls ${PARAMETER}"
+	typeset EXA_CMD=${VALUE%%:*}
+	typeset LS_CMD=${VALUE##*:}
+	if isvalid "exa"; then
+		alias "${ALIAS}"="${EXA_CMD}"
+	elif [ -n "${LS_CMD}" ]; then
+		alias "${ALIAS}"="${LS_CMD}"
 	fi
 }
 
@@ -66,10 +65,16 @@ antigen apply
 
 # aliases
 alias ls="ls --color=auto"
-lsalias ll="exa -l"
-lsalias lla="exa -al"
-lsalias llg="exa -l --git"
-lsalias llag="exa -al --git"
+
+lsalias l='exa -aal':'ls -ahl'
+lsalias l.='exa -d .*':'ls -d .*'
+lsalias la='exa -al':'ls -Ahl'
+lsalias lag='exa -al --git':''
+lsalias lg='exa -l --git':''
+lsalias ll='exa -l':'ls -hl'
+lsalias lla='exa -al':'ls -Ahl'
+lsalias lsa='exa -aal':'ls -ahl'
+
 alias dockrun='docker run -it --rm -e TERM -v /etc/timezone:/etc/timezone:ro -v /etc/localtime:/etc/localtime -v /var/run/docker.sock:/var/run/docker.sock -v $PWD:/mnt -w /mnt -e HOST_GROUPNAME=`id --name --group` -e HOST_USERNAME=`id --name --user` -e HOST_GID=`id --group` -e HOST_UID=`id --user`'
 alias dockrunx='dockrun -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix'
 
