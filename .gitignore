@@ -5,6 +5,8 @@
 
 !/kitty/
 !/nvim/
+nvim/.netrwhist
+
 !/sakura/
 !/zsh/
 !/.vscode/
@@ -24,3 +26,4 @@
 !/JetBrains/Toolbox/
 /JetBrains/Toolbox/*
 !/JetBrains/Toolbox/.settings.json
+
