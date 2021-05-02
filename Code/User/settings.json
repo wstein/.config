@@ -51,5 +51,6 @@
         "**/.bloop": true,
         "**/.metals": true,
         "**/.ammonite": true
-    }
+    },
+    "redhat.telemetry.enabled": false
 }
