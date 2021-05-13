@@ -64,8 +64,9 @@ antigen theme romkatv/powerlevel10k
 antigen apply
 
 # aliases
-alias ls="ls --color=auto"
+alias kssh='kitty +kitten ssh'
 
+alias ls="ls --color=auto"
 lsalias l='exa -aal':'ls -ahl'
 lsalias l.='exa -d .*':'ls -d .*'
 lsalias la='exa -al':'ls -Ahl'
