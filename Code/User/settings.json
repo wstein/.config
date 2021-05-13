@@ -15,7 +15,7 @@
         ]
     },
     "editor.fontFamily": "'FiraCode NF', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
-    "editor.fontLigatures": "'ss04', 'ss06', 'ss07', 'zero'",
+    "editor.fontLigatures": "'ss04', 'ss06', 'ss07'",
     "editor.formatOnSave": true,
     "editor.formatOnSaveMode": "modifications",
     "files.autoSave": "onFocusChange",
