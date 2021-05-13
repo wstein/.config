@@ -64,6 +64,11 @@ antigen theme romkatv/powerlevel10k
 antigen apply
 
 # aliases
+alias dcat='rougify --require ~/.config/rouge/themes/dracula_colorful.rb highlight --theme dracula_colorful'
+
+alias dockrun='docker run -it --rm -e TERM="xterm-256color" -v /etc/timezone:/etc/timezone:ro -v /etc/localtime:/etc/localtime -v /var/run/docker.sock:/var/run/docker.sock -v $PWD:/mnt -w /mnt -e HOST_GROUPNAME=`id --name --group` -e HOST_USERNAME=`id --name --user` -e HOST_GID=`id --group` -e HOST_UID=`id --user`'
+alias dockrunx='dockrun -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix'
+
 alias kssh='kitty +kitten ssh'
 
 alias ls="ls --color=auto"
@@ -75,9 +80,6 @@ lsalias lg='exa -l --git':''
 lsalias ll='exa -l':'ls -hl'
 lsalias lla='exa -al':'ls -Ahl'
 lsalias lsa='exa -aal':'ls -ahl'
-
-alias dockrun='docker run -it --rm -e TERM -v /etc/timezone:/etc/timezone:ro -v /etc/localtime:/etc/localtime -v /var/run/docker.sock:/var/run/docker.sock -v $PWD:/mnt -w /mnt -e HOST_GROUPNAME=`id --name --group` -e HOST_USERNAME=`id --name --user` -e HOST_GID=`id --group` -e HOST_UID=`id --user`'
-alias dockrunx='dockrun -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix'
 
 # global definitions
 export EDITOR=vim
