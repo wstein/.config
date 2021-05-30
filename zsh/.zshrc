@@ -71,15 +71,18 @@ alias dockrunx='dockrun -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix'
 
 alias kssh='kitty +kitten ssh'
 
+# restart GNOMEShell like Alt-F2 r
+alias restart="busctl --user call org.gnome.Shell /org/gnome/Shell org.gnome.Shell Eval s 'Meta.restart(\"Restarting…\")'"
+
 alias ls="ls --color=auto"
-lsalias l='exa -aal':'ls -ahl'
-lsalias l.='exa -d .*':'ls -d .*'
-lsalias la='exa -al':'ls -Ahl'
-lsalias lag='exa -al --git':''
-lsalias lg='exa -l --git':''
-lsalias ll='exa -l':'ls -hl'
-lsalias lla='exa -al':'ls -Ahl'
-lsalias lsa='exa -aal':'ls -ahl'
+lsalias l='exa -hl':'ls -hl'
+lsalias l.='exa -dhl .*':'ls -dhl .*'
+lsalias la='exa -ahl':'ls -Ahl'
+lsalias lag='exa -ahl --git':''
+lsalias lg='exa -hl --git':''
+lsalias ll='exa -hl':'ls -hl'
+lsalias lla='exa -aahl':'ls -ahl'
+lsalias lsa='exa -aa':'ls -a'
 
 # global definitions
 export EDITOR=vim
