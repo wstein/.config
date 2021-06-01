@@ -1,4 +1,5 @@
 #!/bin/env zsh
+export FZF_BASE=$(command -v fzf)
 source "${HOME}"/.local/bin/antigen.zsh
 
 # ========================== HELPER start =============================
@@ -41,6 +42,7 @@ antigen use oh-my-zsh
 antigen bundle git
 isvalid git-extras && antigen bundle git-extras
 isvalid fossil && antigen bundle fossil
+isvalid fzf && antigen bundle fzf
 isvalid docker && antigen bundle docker
 isvalid docker-compose && antigen bundle docker-compose
 isvalid ripgrep && antigen bundle ripgrep
