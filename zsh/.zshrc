@@ -73,6 +73,10 @@ alias dockrunx='dockrun -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix'
 
 alias kssh='kitty +kitten ssh'
 
+alias viz='vim `fzf -m`'
+isvalid code && alias codz='code `fzf -m`'
+
+
 # restart GNOMEShell like Alt-F2 r
 alias restart="busctl --user call org.gnome.Shell /org/gnome/Shell org.gnome.Shell Eval s 'Meta.restart(\"Restarting…\")'"
 
