@@ -82,13 +82,13 @@ isvalid code && alias codz='code `fzf -m`'
 alias restart="busctl --user call org.gnome.Shell /org/gnome/Shell org.gnome.Shell Eval s 'Meta.restart(\"Restarting…\")'"
 
 alias ls="ls --color=auto"
-lsalias l='exa -hl':'ls -hl'
-lsalias l.='exa -dhl .*':'ls -dhl .*'
-lsalias la='exa -ahl':'ls -Ahl'
-lsalias lag='exa -ahl --git':''
-lsalias lg='exa -hl --git':''
-lsalias ll='exa -hl':'ls -hl'
-lsalias lla='exa -aahl':'ls -ahl'
+lsalias l='exa -hl --git':'ls -hl'
+lsalias l.='exa -dhl --git .*':'ls -dhl .*'
+lsalias la='exa -ahl --git':'ls -Ahl'
+#lsalias lag='exa -ahl --git':''
+#lsalias lg='exa -hl --git':''
+lsalias ll='exa -hl --git':'ls -hl'
+lsalias lla='exa -aahl --git':'ls -ahl'
 lsalias lsa='exa -aa':'ls -a'
 
 # global definitions
