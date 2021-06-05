@@ -3,6 +3,7 @@
 !/.gitignore
 !/.gemrc
 
+!/autostart/
 !/kitty/
 !/nvim/
 nvim/.netrwhist
