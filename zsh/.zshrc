@@ -42,6 +42,7 @@ antigen use oh-my-zsh
 antigen bundle git
 isvalid git-extras && antigen bundle git-extras
 isvalid fossil && antigen bundle fossil
+isvalid fzf && antigen bundle fzf
 isvalid docker && antigen bundle docker
 isvalid docker-compose && antigen bundle docker-compose
 isvalid ripgrep && antigen bundle ripgrep
@@ -73,6 +74,9 @@ alias dockrunx='dockrun -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix'
 
 alias kssh='kitty +kitten ssh'
 
+alias fzff='fzf -m --ansi --preview="rougify --require ~/.config/rouge/themes/dracula_colorful.rb highlight --theme dracula_colorful {}"'
+alias fzfd='find -type d -not -path "*/.*" 2>/dev/null | fzf -m --ansi --preview="exa -alh --git --color=always {}"'
+alias fzfda='find -type d 2>/dev/null | fzf -m --ansi --preview="exa -alh --git --color=always {}"'
 alias viz='vim `fzf -m`'
 alias cdz='cd $(find -type d -not -path "*/.*" 2>/dev/null | fzf --ansi --preview="exa -alh --git --color=always {}")'
 alias cdza='cd $(find -type d 2>/dev/null | fzf --ansi --preview="exa -alh --git --color=always {}")'
