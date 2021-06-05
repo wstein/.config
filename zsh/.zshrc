@@ -42,7 +42,6 @@ antigen use oh-my-zsh
 antigen bundle git
 isvalid git-extras && antigen bundle git-extras
 isvalid fossil && antigen bundle fossil
-isvalid fzf && antigen bundle fzf
 isvalid docker && antigen bundle docker
 isvalid docker-compose && antigen bundle docker-compose
 isvalid ripgrep && antigen bundle ripgrep
@@ -66,6 +65,7 @@ antigen theme romkatv/powerlevel10k
 antigen apply
 
 # aliases
+alias ccat='ccat -C always -G Comment=red'
 alias dcat='rougify --require ~/.config/rouge/themes/dracula_colorful.rb highlight --theme dracula_colorful'
 
 alias dockrun='docker run -it --rm -e TERM="xterm-256color" -v /etc/timezone:/etc/timezone:ro -v /etc/localtime:/etc/localtime -v /var/run/docker.sock:/var/run/docker.sock -v $PWD:/mnt -w /mnt -e HOST_GROUPNAME=`id --name --group` -e HOST_USERNAME=`id --name --user` -e HOST_GID=`id --group` -e HOST_UID=`id --user`'
@@ -74,8 +74,9 @@ alias dockrunx='dockrun -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix'
 alias kssh='kitty +kitten ssh'
 
 alias viz='vim `fzf -m`'
+alias cdz='cd $(find -type d -not -path "*/.*" 2>/dev/null | fzf --ansi --preview="exa -alh --git --color=always {}")'
+alias cdza='cd $(find -type d 2>/dev/null | fzf --ansi --preview="exa -alh --git --color=always {}")'
 isvalid code && alias codz='code `fzf -m`'
-
 
 # restart GNOMEShell like Alt-F2 r
 alias restart="busctl --user call org.gnome.Shell /org/gnome/Shell org.gnome.Shell Eval s 'Meta.restart(\"Restarting…\")'"
