@@ -48,6 +48,9 @@ nnoremap <c-n> :call OpenTerminal()<CR>
 
 " -------- General config ----------
 set number
+set mouse=a
+set encoding=utf-8
+
 
 " use alt+hjkl to move between split/vsplit panels
 tnoremap <A-h> <C-\><C-n><C-w>h
