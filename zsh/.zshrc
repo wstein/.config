@@ -1,5 +1,5 @@
 #!/bin/env zsh
-export FZF_BASE=$(command -v fzf)
+
 source "${HOME}"/.local/bin/antigen.zsh
 
 # ========================== HELPER start =============================
@@ -30,6 +30,13 @@ lsalias() {
 }
 
 # ========================== HELPER end ===============================
+
+export FZF_BASE=$(command -v fzf)
+if isvalid "rg"; then
+	export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git/*"'
+else
+	export FZF_DEFAULT_COMMAND='find -not -path "*/.git"'
+fi
 
 # extend path
 export PATH="${HOME}/bin:${HOME}/.local/bin:${PATH}"
@@ -74,13 +81,15 @@ alias dockrunx='dockrun -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix'
 
 alias kssh='kitty +kitten ssh'
 
-alias fzff='fzf -m --ansi --preview="rougify --require ~/.config/rouge/themes/dracula_colorful.rb highlight --theme dracula_colorful {}"'
-alias fzfd='find -type d -not -path "*/.*" 2>/dev/null | fzf -m --ansi --preview="exa -alh --git --color=always {}"'
-alias fzfda='find -type d 2>/dev/null | fzf -m --ansi --preview="exa -alh --git --color=always {}"'
-alias viz='vim `fzf -m`'
-alias cdz='cd $(find -type d -not -path "*/.*" 2>/dev/null | fzf --ansi --preview="exa -alh --git --color=always {}")'
-alias cdza='cd $(find -type d 2>/dev/null | fzf --ansi --preview="exa -alh --git --color=always {}")'
-isvalid code && alias codz='code `fzf -m`'
+alias fzff='fzf --ansi --preview="rougify --require ~/.config/rouge/themes/dracula_colorful.rb highlight --theme dracula_colorful {}"'
+alias fzffm='fzf -m --ansi --preview="rougify --require ~/.config/rouge/themes/dracula_colorful.rb highlight --theme dracula_colorful {}"'
+alias fzfd='find -type d -not -path "*/.*" 2>/dev/null | fzf --ansi --preview="exa -alh --git --color=always {}"'
+alias fzfdm='find -type d -not -path "*/.*" 2>/dev/null | fzf -m --ansi --preview="exa -alh --git --color=always {}"'
+alias vimz='vim `fzff`'
+alias vimzd='vim `fzfd`'
+alias cdz='cd `fzfd`'
+isvalid code && alias codez='code $(fzff)'
+isvalid code && alias codezd='code $(fzfd)'
 
 # restart GNOMEShell like Alt-F2 r
 alias restart="busctl --user call org.gnome.Shell /org/gnome/Shell org.gnome.Shell Eval s 'Meta.restart(\"Restarting…\")'"
