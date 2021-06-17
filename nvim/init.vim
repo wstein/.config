@@ -2,9 +2,13 @@
 
 call plug#begin("~/.vim/plugged")
   " Plugin Section
-  Plug 'wstein/dracula-vim'
+  Plug 'ryanoasis/vim-devicons'
   Plug 'scrooloose/nerdtree'
-  Plug 'ryanoasis/vim-devicons'  
+  Plug 'tpope/vim-fugitive'
+  Plug 'tpope/vim-surround'
+  Plug 'wincent/command-t'
+  Plug 'wstein/dracula-vim'
+  Plug 'yegappan/taglist'
 call plug#end()
 
 
