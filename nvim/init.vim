@@ -2,6 +2,7 @@
 
 call plug#begin("~/.vim/plugged")
   " Plugin Section
+  Plug 'editorconfig/editorconfig-vim'
   Plug 'ryanoasis/vim-devicons'
   Plug 'scrooloose/nerdtree'
   Plug 'tpope/vim-fugitive'
