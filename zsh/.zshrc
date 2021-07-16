@@ -53,6 +53,7 @@ isvalid fzf && antigen bundle fzf
 isvalid docker && antigen bundle docker
 isvalid docker-compose && antigen bundle docker-compose
 isvalid ripgrep && antigen bundle ripgrep
+isvalid terraform && antigen bundle terraform
 isvalid tmux && antigen bundle tmux
 isvalid kitty && antigen bundle kitty
 antigen bundle command-not-found
