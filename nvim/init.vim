@@ -7,7 +7,6 @@ call plug#begin("~/.vim/plugged")
   Plug 'scrooloose/nerdtree'
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-surround'
-  Plug 'wincent/command-t'
   Plug 'wstein/dracula-vim'
   Plug 'yegappan/taglist'
 call plug#end()
