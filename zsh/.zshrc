@@ -14,6 +14,11 @@ mkcd() {
 	mkdir -p "$1" && cd "$1" || exit
 }
 
+# call morecompletions from command line to get completions which do not work from current .zshrc
+morecompletions() {
+	. <(taskctl completion zsh)
+}
+
 # -------------------------- local HELPER -----------------------------
 
 # helper to define alias, only if target command is available
@@ -72,8 +77,6 @@ antigen theme romkatv/powerlevel10k
 
 # Tell Antigen that you're done.
 antigen apply
-
-isvalid taskctl && . <(taskctl completion zsh)
 
 # aliases
 alias ccat='ccat -C always -G Comment=red'
