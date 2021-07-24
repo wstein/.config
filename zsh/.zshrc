@@ -83,8 +83,8 @@ alias dockrun='docker run -it --rm -e TERM="xterm-256color" -v /etc/timezone:/et
 alias dockrunx='dockrun -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix'
 
 alias kssh='kitty +kitten ssh'
-alias lhzsh='HISTFILE=.zsh_history exec zsh'
-alias lhbash='HISTFILE=.bash_history exec bash'
+alias lhzsh='HISTFILE=$PWD/.zsh_history exec zsh'
+alias lhbash='HISTFILE=$PWD/.bash_history exec bash'
 
 alias fzff='fzf --ansi --preview="rougify --require ~/.config/rouge/themes/dracula_colorful.rb highlight --theme dracula_colorful {}"'
 alias fzffm='fzf -m --ansi --preview="rougify --require ~/.config/rouge/themes/dracula_colorful.rb highlight --theme dracula_colorful {}"'
