@@ -1,5 +1,8 @@
 #!/bin/env zsh
 
+# put additional paths to fpath
+fpath=($fpath)
+
 source "${HOME}"/.local/bin/antigen.zsh
 
 # ========================== HELPER start =============================
@@ -17,6 +20,20 @@ mkcd() {
 # call morecompletions from command line to get completions which do not work from current .zshrc
 morecompletions() {
 	. <(taskctl completion zsh)
+	. ~/.antigen/bundles/svenXY/timewarrior/_timew
+}
+
+result() {
+	local ERRORCODE=$?
+	local MESSAGE=${1:-result:}
+
+	if [ $ERRORCODE = 0 ]; then
+		echo "${MESSAGE} \e[32m\e[1msuccess"
+	else
+		echo "${MESSAGE} \e[31m\e[1merror ${ERRORCODE}"
+	fi
+
+	return $ERRORCODE
 }
 
 # -------------------------- local HELPER -----------------------------
@@ -59,6 +76,7 @@ isvalid docker && antigen bundle docker
 isvalid docker-compose && antigen bundle docker-compose
 isvalid ripgrep && antigen bundle ripgrep
 isvalid terraform && antigen bundle terraform
+isvalid vagrant && antigen bundle vagrant
 isvalid tmux && antigen bundle tmux
 isvalid kitty && antigen bundle kitty
 antigen bundle command-not-found
@@ -71,6 +89,7 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle denysdovhan/gitio-zsh
 antigen bundle nvie/git-toolbelt
 antigen bundle wstein/git-toolbelt-zsh
+isvalid timew && antigen bundle svenXY/timewarrior
 
 # Load the theme.
 antigen theme romkatv/powerlevel10k
