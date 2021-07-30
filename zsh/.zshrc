@@ -25,7 +25,7 @@ morecompletions() {
 
 result() {
 	local ERRORCODE=$?
-	local MESSAGE=${1:-result:}
+	local MESSAGE=${*:-\=>}
 
 	if [ $ERRORCODE = 0 ]; then
 		echo "${MESSAGE} \e[32m\e[1msuccess"
