@@ -86,6 +86,7 @@ antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 # other bundles.
+antigen bundle erichs/composure
 antigen bundle denysdovhan/gitio-zsh
 antigen bundle nvie/git-toolbelt
 antigen bundle wstein/git-toolbelt-zsh
