@@ -20,7 +20,7 @@ mkcd() {
 # call morecompletions from command line to get completions which do not work from current .zshrc
 morecompletions() {
 	. <(taskctl completion zsh)
-	. ~/.antigen/bundles/svenXY/timewarrior/_timew
+	! test -f /.antigen/bundles/svenXY/timewarrior/_timew || . $_
 }
 
 result() {
