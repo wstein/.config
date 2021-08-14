@@ -123,6 +123,21 @@ isvalid code && alias codezd='code $(fzfd)'
 alias restart="busctl --user call org.gnome.Shell /org/gnome/Shell org.gnome.Shell Eval s 'Meta.restart(\"Restarting…\")'"
 
 alias ls="ls --color=auto"
+lsalias l='exa -Fx --icons':'ls -Fx'
+lsalias l.='exa -Fdx --icons .*':'ls -Fdx .*'
+lsalias la='exa -Fax --icons':'ls -AFhlx'
+lsalias laa='exa -Faax --icons':'ls -Fahlx'
+
+lsalias ll='exa -Fhlx --git --icons':'ls -Fhl'
+lsalias ll.='exa -Fdhlx --git --icons .*':'ls -Fdhl .*'
+lsalias lla='exa -Fahlx --git --icons':'ls -AFhl'
+lsalias llaa='exa -Faahlx --git --icons':'ls -Fahl'
+
+lsalias lt='exa -FThlx --git --icons'
+lsalias lt.='exa -FTdhlx --git --icons .*'
+lsalias lta='exa -FTahlx --git --icons'
+lsalias ltaa='exa -FTaahlx --git --icons'
+
 isvalid xsel && {
 	alias pbcopy='xsel --clipboard --input'
 	alias pbpaste='xsel --clipboard --output'
