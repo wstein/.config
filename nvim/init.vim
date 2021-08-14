@@ -52,7 +52,7 @@ nnoremap <c-n> :call OpenTerminal()<CR>
 
 " -------- General config ----------
 set number
-set mouse=a
+set mouse=inv
 set encoding=utf-8
 
 
