@@ -136,7 +136,6 @@ lsalias llaa='exa -Faahlx --git --icons':'ls -Fahl'
 lsalias lt='exa -FThlx --git --icons'
 lsalias lt.='exa -FTdhlx --git --icons .*'
 lsalias lta='exa -FTahlx --git --icons'
-lsalias ltaa='exa -FTaahlx --git --icons'
 
 isvalid xsel && {
 	alias pbcopy='xsel --clipboard --input'
