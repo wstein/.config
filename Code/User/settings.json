@@ -48,12 +48,13 @@
         "editor.defaultFormatter": "adpyke.vscode-sql-formatter"
     },
     "files.watcherExclude": {
-        "**/.bloop": true,
-        "**/.metals": true,
         "**/.ammonite": true,
+        "**/.bloop": true,
         "**/.git/objects/**": true,
         "**/.git/subtree-cache/**": true,
-        "**/node_modules/*/**": true
+        "**/.metals": true,
+        "**/node_modules/*/**": true,
+        "**/target": true
     },
     "redhat.telemetry.enabled": false,
     "terminal.integrated.tabs.enabled": false
