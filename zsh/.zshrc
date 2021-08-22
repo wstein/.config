@@ -106,6 +106,7 @@ alias dockrun='docker run -it --rm -e TERM="xterm-256color" -v /etc/timezone:/et
 alias dockrunx='dockrun -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix'
 
 alias kssh='kitty +kitten ssh'
+alias kicat='kitty +kitten icat'
 alias lhzsh='HISTFILE=$PWD/.zsh_history exec zsh'
 alias lhbash='HISTFILE=$PWD/.bash_history exec bash'
 
