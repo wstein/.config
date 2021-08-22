@@ -136,6 +136,7 @@
     # proxy                 # system-wide http/https/ftp proxy
     # battery               # internal battery
     # wifi                  # wifi speed
+    custombanner            # my custom banner uses MY_P10K_CUSTOM_ICON and MY_P10K_CUSTOM_TEXT
     # example               # example user-defined segment (see prompt_example function below)
   )
 
@@ -1663,6 +1664,22 @@
   # Type `p10k help segment` for documentation and a more sophisticated example.
   function prompt_example() {
     p10k segment -b 1 -f 3 -i '⭐' -t 'hello, %n'
+  }
+
+  # Example of a user-defined prompt segment. Function prompt_example will be called on every
+  # prompt if `example` prompt segment is added to POWERLEVEL9K_LEFT_PROMPT_ELEMENTS or
+  # POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS. It displays an icon and yellow text on red background
+  # greeting the user.
+  #
+  # Type `p10k help segment` for documentation and a more sophisticated example.
+  function prompt_custombanner() {
+    if ! [ -z ${MY_P10K_CUSTOM_TEXT} ]; then
+      if ! [ -z ${MY_P10K_CUSTOM_ICON} ]; then
+        p10k segment -b 0 -f 5 -i "${MY_P10K_CUSTOM_ICON}" -t "${MY_P10K_CUSTOM_TEXT}"
+      else
+        p10k segment -b 0 -f 5 -t "${MY_P10K_CUSTOM_TEXT}"
+      fi
+    fi
   }
 
   # User-defined prompt segments may optionally provide an instant_prompt_* function. Its job
