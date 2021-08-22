@@ -9,6 +9,7 @@
 nvim/.netrwhist
 
 !/dive/
+/dive/dive.log
 !/rouge/
 !/sakura/
 !/zsh/
@@ -29,4 +30,4 @@ nvim/.netrwhist
 !/JetBrains/Toolbox/
 /JetBrains/Toolbox/*
 !/JetBrains/Toolbox/.settings.json
-dive/dive.log
+
