@@ -55,7 +55,7 @@ lsalias() {
 
 export FZF_BASE=$(command -v fzf)
 if isvalid "rg"; then
-	export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git/*"'
+	export FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore-vcs --glob "!.git/*"'
 else
 	export FZF_DEFAULT_COMMAND='find -not -path "*/.git"'
 fi
