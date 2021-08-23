@@ -57,5 +57,7 @@
         "**/target": true
     },
     "redhat.telemetry.enabled": false,
-    "terminal.integrated.tabs.enabled": false
+    "terminal.integrated.tabs.enabled": false,
+    "rewrap.wrappingColumn": 120,
+    "rewrap.reformat": true
 }
