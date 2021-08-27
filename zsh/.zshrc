@@ -28,9 +28,9 @@ result() {
 	local MESSAGE=${*:-\=>}
 
 	if [ $ERRORCODE = 0 ]; then
-		echo "${MESSAGE} \e[32m\e[1msuccess"
+		echo -e "${MESSAGE} \e[32m\e[1msuccess"
 	else
-		echo "${MESSAGE} \e[31m\e[1merror ${ERRORCODE}"
+		echo -e "${MESSAGE} \e[31m\e[1merror ${ERRORCODE}"
 	fi
 
 	return $ERRORCODE
