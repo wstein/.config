@@ -1,0 +1,5 @@
+color date			yellow	default
+color cursor			black	13	bold
+color mode			red	default
+color title-blur		black	blue
+color title-focus		black	blue	bold
