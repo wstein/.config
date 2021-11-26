@@ -211,7 +211,11 @@
   #################################[ os_icon: os identifier ]##################################
   # OS identifier color.
 
-  if [ -f /.dockerenv ]; then
+  if [ -n "${NIX_STORE}" ]; then  
+    # nix environment
+    typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=21
+    typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND=$COLOR0_BLACK
+  elif [ -f /.dockerenv ]; then
     # docker container
     typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=33
     typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND=$COLOR0_BLACK
