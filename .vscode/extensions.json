@@ -4,7 +4,6 @@
     // List of extensions which should be recommended for users of this workspace.
     "recommendations": [
         "adamhartford.vscode-base64",
-        "CoenraadS.bracket-pair-colorizer-2",
         "DavidAnson.vscode-markdownlint",
         "dawhite.mustache",
         "dracula-theme.theme-dracula",
