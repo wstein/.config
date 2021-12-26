@@ -18,6 +18,8 @@
     "editor.fontLigatures": "'ss04', 'ss06', 'ss07'",
     "editor.formatOnSave": true,
     "editor.formatOnSaveMode": "modifications",
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs":"active",
     "files.autoSave": "onFocusChange",
     "git.autofetch": true,
     "shellformat.effectLanguages": [
