@@ -4,6 +4,7 @@
 !/.gemrc
 
 !/autostart/
+!/autokey/
 !/kitty/
 !/nvim/
 nvim/.netrwhist
