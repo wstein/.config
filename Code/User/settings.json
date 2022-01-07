@@ -38,14 +38,13 @@
         "files.eol": "\n",
         "editor.tabSize": 2
     },
-    "telemetry.enableTelemetry": false,
-    "telemetry.enableCrashReporter": false,
+    "telemetry.telemetryLevel": "off",
     "workbench.colorTheme": "Dracula",
     "[dockerfile]": {
         "editor.defaultFormatter": "ms-azuretools.vscode-docker"
     },
-    "terminal.integrated.shell.linux": "/bin/zsh",
-    "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "terminal.integrated.defaultProfile.windows": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
     "[sql]": {
         "editor.defaultFormatter": "adpyke.vscode-sql-formatter"
     },
@@ -61,5 +60,13 @@
     "redhat.telemetry.enabled": false,
     "terminal.integrated.tabs.enabled": false,
     "rewrap.wrappingColumn": 120,
-    "rewrap.reformat": true
+    "rewrap.reformat": true,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    }
 }
