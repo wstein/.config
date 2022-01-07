@@ -154,3 +154,19 @@ else
 fi
 
 unfunction lsalias
+
+# added by Nix installer
+if [ -e /home/werner/.nix-profile/etc/profile.d/nix.sh ]; then
+	. /home/werner/.nix-profile/etc/profile.d/nix.sh
+fi
+
+if [ -e /usr/local/bin/aws_completer ]; then
+	autoload bashcompinit && bashcompinit
+	autoload -Uz compinit && compinit
+	complete -C '/usr/local/bin/aws_completer' aws
+fi
+
+if [ -e /usr/bin/terraform ]; then
+	autoload -U +X bashcompinit && bashcompinit
+	complete -o nospace -C /usr/bin/terraform terraform
+fi
