@@ -17,6 +17,8 @@ nvim/.netrwhist
 !/.vscode/
 /.vscode/extensions/
 
+!/pop-shell/
+
 !/Code/
 /Code/*
 !/Code/User/
