@@ -1,14 +1,17 @@
 {
     "autostart": false,
     "channel_rollback_max_history": 1,
+    "ordering": {
+        "local": [
+            {
+                "application_id": "IDEA-U",
+                "channel_id": "ch-0"
+            }
+        ]
+    },
     "shell_scripts": {
         "enabled": true,
         "location": "~/.local/bin"
-    },
-    "network": {
-        "keystore": {
-            "location": "/etc/pki/java/cacerts"
-        }
     },
     "update": {
         "filter": {
@@ -16,11 +19,5 @@
                 "order_value": 10000
             }
         }
-    },
-    "privacy_policy": {
-        "eua_accepted_version": "1.2"
-    },
-    "statistics": {
-        "allow": false
     }
 }
