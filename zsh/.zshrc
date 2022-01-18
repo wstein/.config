@@ -60,6 +60,10 @@ else
 	export FZF_DEFAULT_COMMAND='find -not -path "*/.git"'
 fi
 
+if isvalid "bat"; then 
+	export MANPAGER="bat -l man -p"
+fi
+
 # extend path
 export PATH="${HOME}/bin:${HOME}/.local/bin:${PATH}"
 
@@ -89,6 +93,7 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle erichs/composure
 antigen bundle denysdovhan/gitio-zsh
 antigen bundle nvie/git-toolbelt
+antigen bundle wstein/zsh-syntax-highlighting # adapted dracula theme
 antigen bundle wstein/git-toolbelt-zsh
 isvalid timew && antigen bundle svenXY/timewarrior
 
@@ -99,8 +104,8 @@ antigen theme romkatv/powerlevel10k
 antigen apply
 
 # aliases
-alias ccat='ccat -C always -G Comment=red'
-alias dcat='rougify --require ~/.config/rouge/themes/dracula_colorful.rb highlight --theme dracula_colorful'
+#alias ccat='ccat -C always -G Comment=red'
+#alias dcat='rougify --require ~/.config/rouge/themes/dracula_colorful.rb highlight --theme dracula_colorful'
 
 alias dockrun='docker run -it --rm -e TERM="xterm-256color" -v /etc/timezone:/etc/timezone:ro -v /etc/localtime:/etc/localtime -v /var/run/docker.sock:/var/run/docker.sock -v $PWD:/mnt -w /mnt -e HOST_GROUPNAME=`id --name --group` -e HOST_USERNAME=`id --name --user` -e HOST_GID=`id --group` -e HOST_UID=`id --user`'
 alias dockrunx='dockrun -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix'
@@ -110,8 +115,8 @@ alias kicat='kitty +kitten icat'
 alias lhzsh='HISTFILE=$PWD/.zsh_history exec zsh'
 alias lhbash='HISTFILE=$PWD/.bash_history exec bash'
 
-alias fzff='fzf --ansi --preview="rougify --require ~/.config/rouge/themes/dracula_colorful.rb highlight --theme dracula_colorful {}"'
-alias fzffm='fzf -m --ansi --preview="rougify --require ~/.config/rouge/themes/dracula_colorful.rb highlight --theme dracula_colorful {}"'
+alias fzff='fzf --ansi --preview="bat --color=always --style=numbers --line-range=:500 {}"'
+alias fzffm='fzf -m --ansi --preview="bat --color=always --style=numbers --line-range=:500 {}"'
 alias fzfd='find -type d -not -path "*/.*" 2>/dev/null | fzf --ansi --preview="exa -alh --git --color=always {}"'
 alias fzfdm='find -type d -not -path "*/.*" 2>/dev/null | fzf -m --ansi --preview="exa -alh --git --color=always {}"'
 alias vimz='vim `fzff`'
