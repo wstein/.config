@@ -10,6 +10,7 @@
 nvim/.netrwhist
 !/tig/
 
+!/bat/
 !/dive/
 /dive/dive.log
 !/rouge/
@@ -34,4 +35,3 @@ nvim/.netrwhist
 !/JetBrains/Toolbox/
 /JetBrains/Toolbox/*
 !/JetBrains/Toolbox/.settings.json
-
