@@ -17,6 +17,27 @@
     },
     {
       "class": "Gnome-tweaks"
+    },
+    {
+      "class": "org.remmina.Remmina"
+    },
+    {
+      "class": "Org.gnome.Software"
+    },
+    {
+      "class": "Firewall-config"
+    },
+    {
+      "class": "Gnome-control-center"
+    },
+    {
+      "class": "Gpick"
+    },
+    {
+      "class": "Floating Window Exceptions"
+    },
+    {
+      "class": "Gcolor3"
     }
   ],
   "skiptaskbarhidden": [],
