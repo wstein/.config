@@ -38,6 +38,9 @@
     },
     {
       "class": "Gcolor3"
+    },
+    {
+      "class": "Virt-viewer"
     }
   ],
   "skiptaskbarhidden": [],
