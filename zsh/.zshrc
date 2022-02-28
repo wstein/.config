@@ -36,6 +36,12 @@ result() {
 	return $ERRORCODE
 }
 
+detach() {
+	(
+		nohup "$@" 2>&1 >/dev/null &
+	)
+}
+
 # -------------------------- local HELPER -----------------------------
 
 # helper to define alias, only if target command is available
@@ -60,7 +66,7 @@ else
 	export FZF_DEFAULT_COMMAND='find -not -path "*/.git"'
 fi
 
-if isvalid "bat"; then 
+if isvalid "bat"; then
 	export MANPAGER="bat -l man -p"
 fi
 
