@@ -1,7 +1,7 @@
 #!/bin/env zsh
 
 # put additional paths to fpath
-fpath=($fpath)
+fpath=("${HOME}"/.local/share/zsh/site-functions $fpath)
 
 source "${HOME}"/.local/bin/antigen.zsh
 
