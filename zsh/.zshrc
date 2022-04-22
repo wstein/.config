@@ -166,7 +166,7 @@ isvalid code && {
 }
 isvalid idea && alias didea='detach idea'
 # restart GNOMEShell like Alt-F2 r
-alias restart="busctl --user call org.gnome.Shell /org/gnome/Shell org.gnome.Shell Eval s 'Meta.restart(\"Restarting…\")'"
+alias restart-gnome="busctl --user call org.gnome.Shell /org/gnome/Shell org.gnome.Shell Eval s 'Meta.restart(\"Restarting…\")'"
 
 alias ls="ls --color=auto"
 lsalias l='exa -Fx --icons':'ls -Fx'
