@@ -1,5 +1,19 @@
 #!/bin/env zsh
 
+if [ "${PWD}" != "${HOME}" ] && [ -f "${PWD}"/.zsh_history ]; then
+	echo ~/.zsh_history
+	test -f ~/.zsh_history && fc -R ~/.zsh_history
+	echo "${PWD}"/.zsh_history
+	HISTFILE="${PWD}"/.zsh_history
+fi
+
+fc -R ${HISTFILE}
+
+if [ -f "${PWD}"/.zsh_history_tmp ]; then
+	echo "${PWD}"/.zsh_history_tmp
+	HISTFILE="${PWD}"/.zsh_history_tmp
+fi
+
 # put additional paths to fpath
 fpath=("${HOME}"/.local/share/zsh/site-functions $fpath)
 
@@ -12,9 +26,26 @@ isvalid() {
 	command -v "$1" >/dev/null
 }
 
+# create local history files and start new shell instance
+lhist() {
+	test -f .zsh_history || touch .zsh_history
+	test -f .zsh_history_tmp || touch .zsh_history_tmp
+	exec zsh
+}
+
+# change dir and create new local shell
+lcd() {
+	cd "${1}" && exec ${SHELL}
+}
+
 # create folder inclusive parents and change to folder
 mkcd() {
-	mkdir -p "$1" && cd "$1" || exit
+	mkdir -p "${1}" && cd "${1}" || exit
+}
+
+# change dir and new local shell
+mklcd() {
+	mkcd "${1}" && lhist
 }
 
 # call morecompletions from command line to get completions which do not work from current .zshrc
@@ -118,8 +149,6 @@ alias kicat='kitty +kitten icat'
 alias kssh='kitty +kitten ssh'
 alias qscp='scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=off'
 alias qssh='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=off'
-alias lhzsh='HISTFILE=$PWD/.zsh_history exec zsh'
-alias lhbash='HISTFILE=$PWD/.bash_history exec bash'
 
 alias fzff='fzf --ansi --preview="bat --color=always --style=numbers --line-range=:500 {}"'
 alias fzffm='fzf -m --ansi --preview="bat --color=always --style=numbers --line-range=:500 {}"'
@@ -128,6 +157,8 @@ alias fzfdm='find -type d -not -path "*/.*" 2>/dev/null | fzf -m --ansi --previe
 alias vimz='vim `fzff`'
 alias vimzd='vim `fzfd`'
 alias cdz='cd `fzfd`'
+alias h='fc -ln'
+alias hl='fc -Dil'
 isvalid code && {
 	alias dcode='detach code'
 	alias codez='code $(fzff)'
