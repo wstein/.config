@@ -37,9 +37,7 @@ result() {
 }
 
 detach() {
-	(
 		nohup "$@" 2>&1 >/dev/null &
-	)
 }
 
 # -------------------------- local HELPER -----------------------------
@@ -130,9 +128,12 @@ alias fzfdm='find -type d -not -path "*/.*" 2>/dev/null | fzf -m --ansi --previe
 alias vimz='vim `fzff`'
 alias vimzd='vim `fzfd`'
 alias cdz='cd `fzfd`'
-isvalid code && alias codez='code $(fzff)'
-isvalid code && alias codezd='code $(fzfd)'
-
+isvalid code && {
+	alias dcode='detach code'
+	alias codez='code $(fzff)'
+	alias codezd='code $(fzfd)'
+}
+isvalid idea && alias didea='detach idea'
 # restart GNOMEShell like Alt-F2 r
 alias restart="busctl --user call org.gnome.Shell /org/gnome/Shell org.gnome.Shell Eval s 'Meta.restart(\"Restarting…\")'"
 
