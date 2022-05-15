@@ -213,8 +213,8 @@
 
   if [ -n "${NIX_STORE}" ]; then  
     # nix environment
-    typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=21
-    typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND=$COLOR0_BLACK
+    typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=$COLOR7_WHITE
+    typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND=21
   elif [ -f /.dockerenv ]; then
     # docker container
     typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=33
