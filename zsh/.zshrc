@@ -1,17 +1,17 @@
 #!/bin/env zsh
 
-if [ "${PWD}" != "${HOME}" ] && [ -f "${PWD}"/.zsh_history ]; then
-	echo ~/.zsh_history
-	test -f ~/.zsh_history && fc -R ~/.zsh_history
-	echo "${PWD}"/.zsh_history
+HISTFILE="${HOME}"/.zsh_history
+echo "${HISTFILE}"
+if [ "${HOME}" != "${PWD}" ] && [ -f "${PWD}"/.zsh_history ]; then
+	fc -R ${HISTFILE}
 	HISTFILE="${PWD}"/.zsh_history
+	echo "${HISTFILE}"
 fi
 
-fc -R ${HISTFILE}
-
 if [ -f "${PWD}"/.zsh_history_tmp ]; then
-	echo "${PWD}"/.zsh_history_tmp
+	fc -R ${HISTFILE}
 	HISTFILE="${PWD}"/.zsh_history_tmp
+	echo "${HISTFILE}"
 fi
 
 # put additional paths to fpath
@@ -68,7 +68,7 @@ result() {
 }
 
 detach() {
-		nohup "$@" 2>&1 >/dev/null &
+	nohup "$@" 2>&1 >/dev/null &
 }
 
 # -------------------------- local HELPER -----------------------------
