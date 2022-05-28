@@ -89,6 +89,7 @@ lsalias() {
 # ========================== HELPER end ===============================
 
 export FZF_BASE=$(command -v fzf)
+
 if isvalid "rg"; then
 	export FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore-vcs --glob "!.git/*"'
 else
@@ -146,7 +147,8 @@ alias dockrun='docker run -it --rm -e TERM="xterm-256color" -v /etc/timezone:/et
 alias dockrunx='dockrun -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix'
 
 alias mkpasswd='mkpasswd --method=yescrypt'
-alias histuniq="history | sort -u --key=1.9 | sort -n -k1,1"
+alias histuniq="{ history | sort -u --key=1.9 | sort -n -k1,1 }"
+alias z85="basenc --z85"
 
 alias kicat='kitty +kitten icat'
 alias kssh='kitty +kitten ssh'
