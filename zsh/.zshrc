@@ -149,6 +149,7 @@ alias dockrunx='dockrun -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix'
 alias mkpasswd='mkpasswd --method=yescrypt'
 alias histuniq="{ history | sort -u --key=1.9 | sort -n -k1,1 }"
 alias z85="basenc --z85"
+isvalid terraform && alias tf="terraform"
 
 alias kicat='kitty +kitten icat'
 alias kssh='kitty +kitten ssh'
