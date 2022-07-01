@@ -11,6 +11,8 @@ nvim/.netrwhist
 !/tig/
 
 !/bat/
+!/.byobu/
+/.byobu/.ssh-agent
 !/dive/
 /dive/dive.log
 !/git/
