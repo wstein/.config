@@ -41,6 +41,15 @@
     },
     {
       "class": "Virt-viewer"
+    },
+    {
+      "class": "GParted"
+    },
+    {
+      "class": "gnome-extensions-app"
+    },
+    {
+      "class": "Dconf-editor"
     }
   ],
   "skiptaskbarhidden": [],
