@@ -102,9 +102,9 @@ fi
 
 # extend path
 export PATH="${HOME}/bin:${HOME}/.local/bin:${PATH}"
-if isvalid rbenv && [ -d "${HOME}/.rbenv/bin" ]; then
+if [ -f "${HOME}/.rbenv/bin/rbenv" ]; then
 	export PATH="${HOME}/.rbenv/bin:${PATH}"
-	eval "$(rbenv init -)"
+	eval "$(${HOME}/.rbenv/bin/rbenv init -)"
 fi
 
 # Load the oh-my-zsh's library.
