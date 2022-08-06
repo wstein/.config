@@ -50,6 +50,12 @@
     },
     {
       "class": "Dconf-editor"
+    },
+    {
+      "class": "Piper"
+    },
+    {
+      "class": "pyrogenesis"
     }
   ],
   "skiptaskbarhidden": [],
