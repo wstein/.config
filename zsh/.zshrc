@@ -102,6 +102,10 @@ fi
 
 # extend path
 export PATH="${HOME}/bin:${HOME}/.local/bin:${PATH}"
+if isvalid rbenv && [ -d "${HOME}/.rbenv/bin" ]; then
+	export PATH="${HOME}/.rbenv/bin:${PATH}"
+	eval "$(rbenv init -)"
+fi
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
