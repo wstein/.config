@@ -10,7 +10,6 @@
         ]
     },
     "shell_scripts": {
-        "enabled": true,
         "location": "~/.local/bin"
     },
     "update": {
