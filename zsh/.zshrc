@@ -175,6 +175,9 @@ isvalid code && {
 	alias codezd='code $(fzfd)'
 }
 isvalid idea && alias didea='detach idea'
+isvalid dnf && alias dnf-upgrade-and-reboot="sudo sh -c 'dnf upgrade && reboot'"
+isvalid yum && alias yum-upgrade-and-reboot="sudo sh -c 'yum upgrade && reboot'"
+
 # restart GNOMEShell like Alt-F2 r
 alias restart-gnome="busctl --user call org.gnome.Shell /org/gnome/Shell org.gnome.Shell Eval s 'Meta.restart(\"Restarting…\")'"
 
