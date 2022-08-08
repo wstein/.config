@@ -12,6 +12,11 @@
     "shell_scripts": {
         "location": "~/.local/bin"
     },
+    "network": {
+        "keystore": {
+            "location": "~/.local/share/JetBrains/Toolbox/cacerts"
+        }
+    },
     "update": {
         "filter": {
             "quality_filter": {
