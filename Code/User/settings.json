@@ -14,7 +14,7 @@
             }
         ]
     },
-    "editor.fontFamily": "'FiraCode NF', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontFamily": "'FiraCode Nerd Font Mono', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "editor.fontLigatures": "'ss04', 'ss06', 'ss07'",
     "editor.formatOnSave": true,
     "editor.formatOnSaveMode": "modifications",
@@ -59,6 +59,7 @@
     },
     "redhat.telemetry.enabled": false,
     "terminal.integrated.tabs.enabled": false,
+    "terminal.integrated.fontFamily": "'FiraCode Nerd Font Mono', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "rewrap.wrappingColumn": 120,
     "rewrap.reformat": true,
     "editor.suggestSelection": "first",
