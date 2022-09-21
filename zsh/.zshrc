@@ -216,6 +216,12 @@ fi
 
 unfunction lsalias
 
+if isvalid pyenv && [ "${PYENV_ROOT}" ]; then
+	export PATH="${PYENV_ROOT}/bin:${PATH}"
+	eval "$(pyenv init -)"
+	eval "$(pyenv virtualenv-init -)"
+fi
+
 # added by Nix installer
 if [ -e /home/werner/.nix-profile/etc/profile.d/nix.sh ]; then
 	. /home/werner/.nix-profile/etc/profile.d/nix.sh
