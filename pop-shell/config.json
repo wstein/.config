@@ -59,10 +59,21 @@
     },
     {
       "class": "pyrogenesis"
+    },
+    {
+      "class": "SeaTools"
+    },
+    {
+      "class": "Gnome-disks"
+    },
+    {
+      "class": "Gsmartcontrol"
+    },
+    {
+      "class": "org.gnome.clocks"
     }
   ],
   "skiptaskbarhidden": [],
   "log_on_focus": false,
-  "move_pointer_on_switch": false,
   "default_pointer_position": "TOP_LEFT"
 }
