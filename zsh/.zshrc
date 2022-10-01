@@ -103,7 +103,7 @@ fi
 # extend path
 export PATH="${HOME}/bin:${HOME}/.local/bin:${PATH}"
 if [ -f "${HOME}/.rbenv/bin/rbenv" ]; then
-	export PATH="${HOME}/.rbenv/bin:${PATH}"
+	export PATH="${PATH}:${HOME}/.rbenv/bin"
 	eval "$(${HOME}/.rbenv/bin/rbenv init -)"
 fi
 
@@ -132,7 +132,6 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 # other bundles.
 antigen bundle erichs/composure
 antigen bundle denysdovhan/gitio-zsh
-antigen bundle nvie/git-toolbelt
 antigen bundle wstein/zsh-syntax-highlighting # adapted dracula theme
 antigen bundle wstein/git-toolbelt-zsh
 isvalid timew && antigen bundle svenXY/timewarrior
@@ -190,14 +189,22 @@ lsalias l.='exa -Fdx --icons .*':'ls -Fdx .*'
 lsalias la='exa -Fax --icons':'ls -AFhlx'
 lsalias laa='exa -Faax --icons':'ls -Fahlx'
 
-lsalias ll='exa -Fhlx --git --icons --time-style=long-iso':'ls -Fhl'
-lsalias ll.='exa -Fdhlx --git --icons --time-style=long-iso .*':'ls -Fdhl .*'
-lsalias lla='exa -Fahlx --git --icons --time-style=long-iso':'ls -AFhl'
-lsalias llaa='exa -Faahlx --git --icons --time-style=long-iso':'ls -Fahl'
+lsalias ll='exa -Fhlx --icons --time-style long-iso':'ls -Fhl'
+lsalias ll.='exa -Fdhlx --icons --time-style long-iso .*':'ls -Fdhl .*'
+lsalias lla='exa -Fahlx --icons --time-style long-iso':'ls -AFhl'
+lsalias llaa='exa -Faahlx --icons --time-style long-iso':'ls -Fahl'
 
-lsalias lt='exa -FThlx --git --icons'
-lsalias lt.='exa -FTdhlx --git --icons .*'
-lsalias lta='exa -FTahlx --git --icons'
+lsalias lg='exa -Fhlx --git --icons --time-style long-iso':
+lsalias lg.='exa -Fdhlx --git --icons --time-style long-iso .*':
+lsalias lga='exa -Fahlx --git --icons --time-style long-iso':
+lsalias lgaa='exa -Faahlx --git --icons --time-style long-iso':
+
+lsalias lt='exa -FThlx --icons':
+lsalias lt.='exa -FTdhlx --icons .*':
+lsalias lta='exa -FTahlx --icons':
+lsalias ltg='exa -FThlx --git --icons':
+lsalias ltg.='exa -FTdhlx --git --icons .*':
+lsalias ltga='exa -FTahlx --git --icons':
 
 isvalid xsel && {
 	alias pbcopy='xsel --clipboard --input'
