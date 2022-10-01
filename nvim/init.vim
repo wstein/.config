@@ -66,3 +66,5 @@ nnoremap <A-j> <C-w>j
 nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
 
+" --- Copy and Paste via System Clipboard ----
+set clipboard+=unnamedplus
