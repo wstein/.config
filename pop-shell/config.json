@@ -17,9 +17,12 @@
     },
     {
       "class": "Gnome-tweaks"
-    },
+    }, 
     {
       "class": "org.remmina.Remmina"
+    },
+    {
+      "class": "Zenity"
     },
     {
       "class": "Org.gnome.Software"
