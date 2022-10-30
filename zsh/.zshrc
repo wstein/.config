@@ -223,8 +223,7 @@ fi
 
 unfunction lsalias
 
-if isvalid pyenv && [ "${PYENV_ROOT}" ]; then
-	export PATH="${PYENV_ROOT}/bin:${PATH}"
+if isvalid pyenv; then
 	eval "$(pyenv init -)"
 	eval "$(pyenv virtualenv-init -)"
 fi
