@@ -1,9 +1,24 @@
 {
-    // Highlight Comments!
-    // -------------------
+    "[dockerfile]": {
+        "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+    },
+    "[shellscript]": {
+        "editor.tabSize": 4,
+        "files.eol": "\n"
+    },
+    "[sql]": {
+        "editor.defaultFormatter": "adpyke.vscode-sql-formatter"
+    },
+    "editor.bracketPairColorization.enabled": true,
+    "editor.fontFamily": "'FiraCode NF', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontLigatures": "'ss04', 'ss06', 'ss07'",
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "modifications",
+    "editor.guides.bracketPairs": "active",
+    "editor.suggestSelection": "first",
     "editor.tokenColorCustomizations": {
-        "[Dracula]": {
-            "comments": "#FF6E6E"
+        "[*]": {
+            "comments": "#FF6E6E" // Highlight Comments!
         },
         "textMateRules": [
             {
@@ -14,14 +29,33 @@
             }
         ]
     },
-    "editor.fontFamily": "'FiraCode Nerd Font Mono', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
-    "editor.fontLigatures": "'ss04', 'ss06', 'ss07'",
-    "editor.formatOnSave": true,
-    "editor.formatOnSaveMode": "modifications",
-    "editor.bracketPairColorization.enabled": true,
-    "editor.guides.bracketPairs":"active",
+    "eslint.run": "onSave",
+    "extensions.autoUpdate": false,
     "files.autoSave": "onFocusChange",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.factorypath": true,
+        "**/.idea": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.zsh_history*": true,
+        "**/node_modules": true,
+        "**/package-lock.json": true
+    },
+    "files.watcherExclude": {
+        "**/.ammonite": true,
+        "**/.bloop": true,
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/.metals": true,
+        "**/node_modules/*/**": true,
+        "**/target": true
+    },
     "git.autofetch": true,
+    "redhat.telemetry.enabled": false,
+    "rewrap.reformat": true,
+    "rewrap.wrappingColumn": 120,
+    "shellcheck.customArgs": [],
     "shellformat.effectLanguages": [
         "shellscript",
         "dockerfile",
@@ -34,43 +68,35 @@
         "spring-boot-properties",
         "azcli"
     ],
-    "[shellscript]": {
-        "files.eol": "\n",
-        "editor.tabSize": 2
-    },
+    "svg.preview.mode": "svg",
     "telemetry.telemetryLevel": "off",
-    "workbench.colorTheme": "Dracula",
-    "[dockerfile]": {
-        "editor.defaultFormatter": "ms-azuretools.vscode-docker"
-    },
     "terminal.integrated.defaultProfile.linux": "zsh",
     "terminal.integrated.defaultProfile.windows": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
-    "[sql]": {
-        "editor.defaultFormatter": "adpyke.vscode-sql-formatter"
-    },
-    "files.watcherExclude": {
-        "**/.ammonite": true,
-        "**/.bloop": true,
-        "**/.git/objects/**": true,
-        "**/.git/subtree-cache/**": true,
-        "**/.metals": true,
-        "**/node_modules/*/**": true,
-        "**/target": true
-    },
-    "redhat.telemetry.enabled": false,
     "terminal.integrated.tabs.enabled": false,
-    "terminal.integrated.fontFamily": "'FiraCode Nerd Font Mono', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
-    "rewrap.wrappingColumn": 120,
-    "rewrap.reformat": true,
-    "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "files.exclude": {
-        "**/.classpath": true,
-        "**/.project": true,
-        "**/.settings": true,
-        "**/.factorypath": true
-    },
+    "yaml.format.enable": true,
+    "workbench.colorTheme": "Dracula",
+    "workbench.settings.useSplitJSON": false,
+    "editor.inlineSuggest.enabled": true,
+    "yaml.customTags": [
+        "!encrypted/pkcs1-oaep scalar",
+        "!vault scalar"
+    ],
     "workbench.editorAssociations": {
-        "*.md": "default"
-    }
+        "*.md": "vscode.markdown.preview.editor"
+    },
+    // configure podman as default container runtime
+    "docker.dockerPath": "podman",
+    "dev.containers.dockerPath": "podman",
+    "docker.host": "unix:///run/user/1000/podman/podman.sock",
+
+    "github.copilot.enable": {
+        "*": true,
+        "yaml": false,
+        "plaintext": true,
+        "markdown": true
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
 }
