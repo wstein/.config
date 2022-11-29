@@ -67,7 +67,7 @@
         "properties",
         "spring-boot-properties",
         "azcli"
-    ], // 1 -------  2 2 != 3 
+    ],
     "svg.preview.mode": "svg",
     "telemetry.telemetryLevel": "off",
     "terminal.integrated.defaultProfile.linux": "zsh",
@@ -88,6 +88,7 @@
     "docker.dockerPath": "podman",
     "dev.containers.dockerPath": "podman",
     "docker.host": "unix:///run/user/1000/podman/podman.sock",
+    "docker.explorerRefreshInterval": 5000,
 
     "github.copilot.enable": {
         "*": true,
@@ -97,5 +98,13 @@
     },
     "[typescriptreact]": {
         "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "docker.containers.label": "ContainerName",
+    "docker.containers.description": [
+        "RepositoryNameAndTag",
+        "Status"
+    ],
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
     },
 }
