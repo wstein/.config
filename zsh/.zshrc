@@ -158,6 +158,7 @@ alias kicat='kitty +kitten icat'
 alias kssh='kitty +kitten ssh'
 alias qscp='scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=off'
 alias qssh='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=off'
+isvalid pwgen && alias pwg='pwgen -Bsy -r"[]{}=-+_/?\\|'"'"'\`;:@#^&*()<>~\""'
 
 alias fzff='fzf --ansi --preview="bat --color=always --style=numbers --line-range=:500 {}"'
 alias fzffm='fzf -m --ansi --preview="bat --color=always --style=numbers --line-range=:500 {}"'
