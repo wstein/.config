@@ -207,10 +207,13 @@ lsalias ltg='exa -FThlx --git --icons':
 lsalias ltg.='exa -FTdhlx --git --icons .*':
 lsalias ltga='exa -FTahlx --git --icons':
 
-isvalid xsel && {
+if isvalid xclip; then
+	alias pbcopy='xclip -selection clipboard'
+	alias pbpaste='xclip -selection clipboard -o'
+elif isvalid xsel; then
 	alias pbcopy='xsel --clipboard --input'
 	alias pbpaste='xsel --clipboard --output'
-}
+fi
 
 # global definitions
 export EDITOR=vim
