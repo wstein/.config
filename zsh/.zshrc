@@ -14,6 +14,13 @@ if [ -f "${PWD}"/.zsh_history_tmp ]; then
 	echo "${HISTFILE}"
 fi
 
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+	source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # put additional paths to fpath
 fpath=("${HOME}"/.local/share/zsh/site-functions $fpath)
 
@@ -88,8 +95,6 @@ lsalias() {
 
 # ========================== HELPER end ===============================
 
-export FZF_BASE=$(command -v fzf)
-
 if isvalid "rg"; then
 	export FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore-vcs --glob "!.git/*"'
 else
@@ -160,13 +165,15 @@ alias qscp='scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=off'
 alias qssh='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=off'
 isvalid pwgen && alias pwg='pwgen -Bsy -r"[]{}=-+_/?\\|'"'"'\`;:@#^&*()<>~\"yYzZ"'
 
-alias fzff='fzf --ansi --preview="bat --color=always --style=numbers --line-range=:500 {}"'
-alias fzffm='fzf -m --ansi --preview="bat --color=always --style=numbers --line-range=:500 {}"'
-alias fzfd='find -type d -not -path "*/.*" 2>/dev/null | fzf --ansi --preview="exa -alh --git --color=always {}"'
-alias fzfdm='find -type d -not -path "*/.*" 2>/dev/null | fzf -m --ansi --preview="exa -alh --git --color=always {}"'
-alias vimz='vim `fzff`'
-alias vimzd='vim `fzfd`'
-alias cdz='cd `fzfd`'
+isvalid fzf && {
+	alias fzff='fzf --ansi --preview="bat --color=always --style=numbers --line-range=:500 {}"'
+	alias fzffm='fzf -m --ansi --preview="bat --color=always --style=numbers --line-range=:500 {}"'
+	alias fzfd='find -type d -not -path "*/.*" 2>/dev/null | fzf --ansi --preview="exa -alh --git --color=always {}"'
+	alias fzfdm='find -type d -not -path "*/.*" 2>/dev/null | fzf -m --ansi --preview="exa -alh --git --color=always {}"'
+	alias vimz='vim `fzff`'
+	alias vimzd='vim `fzfd`'
+	alias cdz='cd `fzfd`'
+}
 alias h='fc -ln'
 alias hl='fc -Dil'
 isvalid code && {
@@ -247,3 +254,6 @@ if [ -e /usr/bin/terraform ]; then
 	autoload -U +X bashcompinit && bashcompinit
 	complete -o nospace -C /usr/bin/terraform terraform
 fi
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+#export PATH="$PATH:$HOME/.rvm/bin"
