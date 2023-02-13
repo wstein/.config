@@ -1119,7 +1119,7 @@
 
   ##############################[ node_version: node.js version ]###############################
   # Node version color.
-  typeset -g POWERLEVEL9K_NODE_VERSION_FOREGROUND=$COLOR7_WHITE
+  typeset -g POWERLEVEL9K_NODE_VERSION_FOREGROUND=$COLOR0_BLACK
   typeset -g POWERLEVEL9K_NODE_VERSION_BACKGROUND=$COLOR2_GREEN
   # Show node version only when in a directory tree containing package.json.
   typeset -g POWERLEVEL9K_NODE_VERSION_PROJECT_ONLY=true
