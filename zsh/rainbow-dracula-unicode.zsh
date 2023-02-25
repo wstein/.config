@@ -227,7 +227,7 @@
   elif [ -f /run/.containerenv ]; then
     if [ -d /run/user/${UID}/toolbox ]; then
       # toolbox container
-      typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=205
+      typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=$COLOR7_WHITE
       typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND=54
     else
       # podman container
@@ -1615,8 +1615,8 @@
 
   ##############[ toolbox: toolbox name (https://github.com/containers/toolbox) ]###############
   # Toolbox color.
-  typeset -g POWERLEVEL9K_TOOLBOX_FOREGROUND=$COLOR0_BLACK
-  typeset -g POWERLEVEL9K_TOOLBOX_BACKGROUND=$COLOR3_YELLOW
+  typeset -g POWERLEVEL9K_TOOLBOX_FOREGROUND=$COLOR7_WHITE
+  typeset -g POWERLEVEL9K_TOOLBOX_BACKGROUND=54
   # Don't display the name of the toolbox if it matches fedora-toolbox-*.
   typeset -g POWERLEVEL9K_TOOLBOX_CONTENT_EXPANSION='${P9K_TOOLBOX_NAME:#fedora-toolbox-*}'
   # Custom icon.
