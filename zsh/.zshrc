@@ -129,6 +129,7 @@ isvalid vagrant && antigen bundle vagrant
 isvalid tmux && antigen bundle tmux
 isvalid kitty && antigen bundle kitty
 antigen bundle command-not-found
+isvalid taskw && antigen bundle taskwarrior
 
 # Load the zsh-users bundles.
 antigen bundle zsh-users/zsh-autosuggestions
