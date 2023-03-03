@@ -135,6 +135,7 @@ antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 # other bundles.
+antigen bundle Aloxaf/fzf-tab
 antigen bundle erichs/composure
 antigen bundle denysdovhan/gitio-zsh
 antigen bundle wstein/zsh-syntax-highlighting # adapted dracula theme
