@@ -215,6 +215,8 @@ lsalias ltg='exa -FThlx --git --icons':
 lsalias ltg.='exa -FTdhlx --git --icons .*':
 lsalias ltga='exa -FTahlx --git --icons':
 
+isvalid git && alias gtlo="git log --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --tags --no-walk"
+
 if isvalid xclip; then
 	alias pbcopy='xclip -selection clipboard'
 	alias pbpaste='xclip -selection clipboard -o'
