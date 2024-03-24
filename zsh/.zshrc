@@ -193,6 +193,8 @@ alias restart-gnome="busctl --user call org.gnome.Shell /org/gnome/Shell org.gno
 alias mount-ls='mount -l | column --table --table-columns=device,-,mount,-,type,options,label --table-hide=2,4 --table-order=device,label,mount,type'
 alias df-mount="df -hT -x devtmpfs -x tmpfs"
 
+isvalid qrencode && alias qrencode-ansiutf8="qrencode -t ansiutf8"
+
 alias ls="ls --color=auto"
 lsalias l='exa -Fx --icons':'ls -Fx'
 lsalias l.='exa -Fdx --icons .*':'ls -Fdx .*'
