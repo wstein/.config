@@ -1,3 +1,4 @@
+
 {
     "[dockerfile]": {
         "editor.defaultFormatter": "ms-azuretools.vscode-docker"
@@ -11,7 +12,7 @@
     },
     "editor.bracketPairColorization.enabled": true,
     "editor.fontFamily": "'FiraCode NFM', 'FiraCode Nerd Font', 'FiraCode NF', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
-    "editor.fontLigatures": "'ss04', 'ss06', 'ss07'", // => >= <=
+    "editor.fontLigatures": "'ss04', 'ss06', 'ss07'", // => >= <= !=
     "editor.formatOnSave": true, 
     "editor.formatOnSaveMode": "modifications",
     "editor.guides.bracketPairs": "active",
@@ -30,8 +31,6 @@
         ]
     },
     "eslint.run": "onSave",
-    "extensions.autoUpdate": false,
-    "files.autoSave": "onFocusChange",
     "files.exclude": {
         "**/.classpath": true,
         "**/.factorypath": true,
@@ -84,11 +83,8 @@
     "workbench.editorAssociations": {
         "*.md": "vscode.markdown.preview.editor"
     },
-    // configure podman as default container runtime
-    "docker.dockerPath": "podman",
-    "dev.containers.dockerPath": "podman",
-    "docker.host": "unix:///run/user/1000/podman/podman.sock",
     "docker.explorerRefreshInterval": 5000,
+
 
     "github.copilot.enable": {
         "*": true,
@@ -107,4 +103,43 @@
     "[json]": {
         "editor.defaultFormatter": "vscode.json-language-features"
     },
+    "workbench.colorTheme": "Dracula Theme",
+    "explorer.confirmDelete": false,
+    "okteto.telemetry": false,
+    "okteto.upTimeout": 30,
+    "window.zoomLevel": 1,
+    "workbench.iconTheme": "material-icon-theme",
+    "remoteHub.commitDirectlyWarning": "off",
+    "remote.SSH.remotePlatform": {
+        "coder-vscode--admin--macmini": "linux",
+        "*.gitpod.io": "linux",
+        "*.gitpod.local": "linux",
+        "*.gitpod.remote": "linux"
+    },
+    "files.autoSave": "onFocusChange",
+    "excalidraw.theme": "light",
+    "excalidraw.image": {
+        "exportScale": 1,
+        "exportWithBackground": true,
+        "exportWithDarkMode": false,
+        "gridSize": 15
+    },
+    "github.copilot.editor.enableAutoCompletions": true,
+    "[ruby]": {
+        "editor.defaultFormatter": "Shopify.ruby-lsp",
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true,
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true,
+        "files.trimTrailingWhitespace": true,
+        "files.insertFinalNewline": true,
+        "files.trimFinalNewlines": true,
+        "editor.rulers": [
+            120
+        ],
+        "editor.semanticHighlighting.enabled": true
+    },
+    "[markdown]": {
+        "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+    }
 }
