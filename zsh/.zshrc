@@ -86,7 +86,7 @@ lsalias() {
 	typeset VALUE=${1##*=}
 	typeset EXA_CMD=${VALUE%%:*}
 	typeset LS_CMD=${VALUE##*:}
-	if isvalid "exa"; then
+	if isvalid "eza"; then
 		alias "${ALIAS}"="${EXA_CMD}"
 	elif [ -n "${LS_CMD}" ]; then
 		alias "${ALIAS}"="${LS_CMD}"
@@ -149,7 +149,6 @@ antigen theme romkatv/powerlevel10k
 # Tell Antigen that you're done.
 antigen apply
 
-# aliases
 #alias ccat='ccat -C always -G Comment=red'
 #alias dcat='rougify --require ~/.config/rouge/themes/dracula_colorful.rb highlight --theme dracula_colorful'
 
@@ -170,8 +169,8 @@ isvalid pwgen && alias pwg='pwgen -Bsy -r"[]{}=-+_/?\\|'"'"'\`;:@#^&*()<>~\"yYzZ
 isvalid fzf && {
 	alias fzff='fzf --ansi --preview="bat --color=always --style=numbers --line-range=:500 {}"'
 	alias fzffm='fzf -m --ansi --preview="bat --color=always --style=numbers --line-range=:500 {}"'
-	alias fzfd='find -type d -not -path "*/.*" 2>/dev/null | fzf --ansi --preview="exa -alh --git --color=always {}"'
-	alias fzfdm='find -type d -not -path "*/.*" 2>/dev/null | fzf -m --ansi --preview="exa -alh --git --color=always {}"'
+	alias fzfd='find -type d -not -path "*/.*" 2>/dev/null | fzf --ansi --preview="eza -alh --git --color=always {}"'
+	alias fzfdm='find -type d -not -path "*/.*" 2>/dev/null | fzf -m --ansi --preview="eza -alh --git --color=always {}"'
 	alias vimz='vim `fzff`'
 	alias vimzd='vim `fzfd`'
 	alias cdz='cd `fzfd`'
@@ -196,29 +195,57 @@ alias df-mount="df -hT -x devtmpfs -x tmpfs"
 isvalid qrencode && alias qrencode-ansiutf8="qrencode -t ansiutf8"
 
 alias ls="ls --color=auto"
-lsalias l='exa -Fx --icons':'ls -Fx'
-lsalias l.='exa -Fdx --icons .*':'ls -Fdx .*'
-lsalias la='exa -Fax --icons':'ls -AFhlx'
-lsalias laa='exa -Faax --icons':'ls -Fahlx'
+lsalias l='eza --classify=auto -x --icons':'ls -Fx'
+lsalias l.='eza --classify=auto -dx --icons .*':'ls -Fdx .*'
+lsalias la='eza --classify=auto -ax --icons':'ls -AFhlx'
+lsalias laa='eza --classify=auto -aax --icons':'ls -Fahlx'
 
-lsalias ll='exa -Fhlx --icons --time-style long-iso':'ls -Fhl'
-lsalias ll.='exa -Fdhlx --icons --time-style long-iso .*':'ls -Fdhl .*'
-lsalias lla='exa -Fahlx --icons --time-style long-iso':'ls -AFhl'
-lsalias llaa='exa -Faahlx --icons --time-style long-iso':'ls -Fahl'
+lsalias ll='eza --classify=auto -hlx --icons --time-style long-iso':'ls -Fhl'
+lsalias ll.='eza --classify=auto -dhlx --icons --time-style long-iso .*':'ls -Fdhl .*'
+lsalias lla='eza --classify=auto -ahlx --icons --time-style long-iso':'ls -AFhl'
+lsalias llaa='eza --classify=auto -aahlx --icons --time-style long-iso':'ls -Fahl'
 
-lsalias lg='exa -Fhlx --git --icons --time-style long-iso':
-lsalias lg.='exa -Fdhlx --git --icons --time-style long-iso .*':
-lsalias lga='exa -Fahlx --git --icons --time-style long-iso':
-lsalias lgaa='exa -Faahlx --git --icons --time-style long-iso':
+lsalias lg='eza --classify=auto -hlx --git --icons --time-style long-iso':
+lsalias lg.='eza --classify=auto -dhlx --git --icons --time-style long-iso .*':
+lsalias lga='eza --classify=auto -ahlx --git --icons --time-style long-iso':
+lsalias lgaa='eza --classify=auto -aahlx --git --icons --time-style long-iso':
 
-lsalias lt='exa -FThlx --icons':
-lsalias lt.='exa -FTdhlx --icons .*':
-lsalias lta='exa -FTahlx --icons':
-lsalias ltg='exa -FThlx --git --icons':
-lsalias ltg.='exa -FTdhlx --git --icons .*':
-lsalias ltga='exa -FTahlx --git --icons':
+lsalias lt='eza --classify=auto -Thlx --icons':
+lsalias lt.='eza --classify=auto -Tdhlx --icons .*':
+lsalias lta='eza --classify=auto -Tahlx --icons':
+lsalias ltg='eza --classify=auto -Thlx --git --icons':
+lsalias ltg.='eza --classify=auto -Tdhlx --git --icons .*':
+lsalias ltga='eza --classify=auto -Tahlx --git --icons':
 
 isvalid git && alias gtlo="git log --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --tags --no-walk"
+
+if isvalid "\\gl"; then
+	alias gle='\\gl'
+	alias glbr='\\gl branch'
+	alias glbrc='\\gl branch -c'
+	alias glbrd='\\gl branch -d'
+	alias glco='\\gl checkout'
+	alias glcommit='gl commit'
+	alias glcmsg='\\gl commit -m'
+	alias gldiff='\\gl diff'
+	alias glfuse='\\gl fuse'
+	alias glhist='\\gl history'
+	alias glinit='\\gl init'
+	alias glmerge='\\gl merge'
+	alias glpub='\\gl publish'
+	alias glrem='\\gl remote'
+	alias glremc='\\gl remote -c'
+	alias glremd='\\gl remote -d'
+	alias glres='\\gl resolve'
+	alias glst='\\gl status'
+	alias glsw='\\gl switch'
+	alias gltag='\\gl tag'
+	alias gltagc='\\gl tag -c'
+	alias gltagd='\\gl tag -d'
+	alias gltagr='\\gl tag -l'
+	alias gltr='\\gl track'
+	alias glutr='\\gl untrack'
+fi
 
 if isvalid xclip; then
 	alias pbcopy='xclip -selection clipboard'
@@ -265,3 +292,10 @@ export GPG_TTY=$(tty)
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 #export PATH="$PATH:$HOME/.rvm/bin"
+
+if [ -d "/opt/homebrew/opt/ruby/bin" ]; then
+  export PATH=/opt/homebrew/opt/ruby/bin:$PATH
+  export PATH=`gem environment gemdir`/bin:$PATH
+fi
+
+export GROOVY_HOME=/opt/homebrew/opt/groovy/libexec
