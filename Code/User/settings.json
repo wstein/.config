@@ -12,7 +12,7 @@
     },
     "editor.bracketPairColorization.enabled": true,
     "editor.fontFamily": "'FiraCode NFM', 'FiraCode Nerd Font', 'FiraCode NF', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
-    "editor.fontLigatures": "'ss04', 'ss06', 'ss07'", // => >= <= !=
+    "editor.fontLigatures": "'ss01', 'ss02', 'ss04', 'ss06', 'ss07', 'ss09', 'cv05', 'cv14', 'cv26', 'cv28'", // => >= <= 0 3 $ {. .} [] {} () =~ !~ :- =>> <<= = == === != !==
     "editor.formatOnSave": true, 
     "editor.formatOnSaveMode": "modifications",
     "editor.guides.bracketPairs": "active",
