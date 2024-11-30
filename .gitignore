@@ -21,6 +21,9 @@ nvim/.netrwhist
 !/zsh/
 !/.vscode/
 /.vscode/extensions/
+/.vscode/cli/servers/
+/.vscode/cli/tunnel-*.lock
+/.vscode/cli/code_tunnel.json
 
 !/pop-shell/
 
@@ -39,3 +42,4 @@ nvim/.netrwhist
 /JetBrains/Toolbox/*
 !/JetBrains/Toolbox/.settings.json
 git/gitk
+
