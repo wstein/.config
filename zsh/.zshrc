@@ -105,6 +105,13 @@ if isvalid "bat"; then
 	export MANPAGER="bat -l man -p"
 fi
 
+# check for user podman.sock and set DOCKER_HOST otherwise use default
+if [ -S "${XDG_RUNTIME_DIR}/podman/podman.sock" ]; then
+	export DOCKER_HOST="unix://${XDG_RUNTIME_DIR}/podman/podman.sock"
+elif [ -S "/var/run/docker.sock" ]; then
+	export DOCKER_HOST="unix:///var/run/docker.sock"
+fi
+
 # extend path
 export PATH="${HOME}/bin:${HOME}/.local/bin:${PATH}"
 if [ -f "${HOME}/.rbenv/bin/rbenv" ]; then
