@@ -202,15 +202,15 @@ alias df-mount="df -hT -x devtmpfs -x tmpfs"
 isvalid qrencode && alias qrencode-ansiutf8="qrencode -t ansiutf8"
 
 alias ls="ls --color=auto"
-lsalias l='eza --classify=auto -x --icons':'ls -Fx'
-lsalias l.='eza --classify=auto -dx --icons .*':'ls -Fdx .*'
-lsalias la='eza --classify=auto -ax --icons':'ls -AFhlx'
-lsalias laa='eza --classify=auto -aax --icons':'ls -Fahlx'
+lsalias l='eza --classify=auto -x --icons':'ls -F -x'
+lsalias l.='eza --classify=auto -dx --icons .*':'ls -F -dx .*'
+lsalias la='eza --classify=auto -ax --icons':'ls -F -Ahlx'
+lsalias laa='eza --classify=auto -aax --icons':'ls -F -ahlx'
 
-lsalias ll='eza --classify=auto -hlx --icons --time-style long-iso':'ls -Fhl'
-lsalias ll.='eza --classify=auto -dhlx --icons --time-style long-iso .*':'ls -Fdhl .*'
-lsalias lla='eza --classify=auto -ahlx --icons --time-style long-iso':'ls -AFhl'
-lsalias llaa='eza --classify=auto -aahlx --icons --time-style long-iso':'ls -Fahl'
+lsalias ll='eza --classify=auto -hlx --icons --time-style long-iso':'ls -F -hl'
+lsalias ll.='eza --classify=auto -dhlx --icons --time-style long-iso .*':'ls -F -dhl .*'
+lsalias lla='eza --classify=auto -ahlx --icons --time-style long-iso':'ls -F -Ahl'
+lsalias llaa='eza --classify=auto -aahlx --icons --time-style long-iso':'ls -F -ahl'
 
 lsalias lg='eza --classify=auto -hlx --git --icons --time-style long-iso':
 lsalias lg.='eza --classify=auto -dhlx --git --icons --time-style long-iso .*':
