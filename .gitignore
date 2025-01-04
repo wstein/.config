@@ -42,3 +42,4 @@
 !/JetBrains/Toolbox/.settings.json
 git/gitk
 
+zsh/*.zwc
