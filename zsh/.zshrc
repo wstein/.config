@@ -1,5 +1,11 @@
 #!/bin/env zsh
 
+# Download Znap, if it's not there yet.
+[[ -r ~/.znap/zsh-snap/znap.zsh ]] ||
+    git clone --depth 1 -- \
+        https://github.com/marlonrichert/zsh-snap.git ~/.znap/zsh-snap
+        source ~/.znap/zsh-snap/znap.zsh  # Start Znap
+
 HISTFILE="${HOME}"/.zsh_history
 echo "${HISTFILE}"
 if [ "${HOME}" != "${PWD}" ] && [ -f "${PWD}"/.zsh_history ]; then
@@ -87,7 +93,44 @@ lsalias() {
 	fi
 }
 
-# ========================== HELPER end ===============================
+# -------------------------- start of Znap ------------------------------
+
+source ~/.znap/zsh-snap/znap.zsh
+
+znap source Aloxaf/fzf-tab
+znap source denysdovhan/gitio-zsh
+znap source erichs/composure
+znap source ohmyzsh/ohmyzsh lib/git plugins/{git,git-extras,fzf,command-not-found}
+znap source romkatv/powerlevel10k
+znap source wstein/git-toolbelt-zsh
+znap source wstein/zsh-syntax-highlighting # adapted dracula theme
+znap source zsh-users/zsh-autosuggestions
+
+# optional plugins
+isvalid ansible && znap source ohmyzsh/ohmyzsh plugins/ansible
+isvalid aws && znap source ohmyzsh/ohmyzsh plugins/aws
+isvalid az && znap source ohmyzsh/ohmyzsh plugins/azure
+isvalid docker && znap fpath _docker 'docker completion zsh'
+isvalid docker-compose && znap source ohmyzsh/ohmyzsh plugins/docker-compose
+isvalid fossil && znap source ohmyzsh/ohmyzsh plugins/fossil
+isvalid gcloud && znap source ohmyzsh/ohmyzsh plugins/gcloud
+isvalid gh && znap source ohmyzsh/ohmyzsh plugins/github
+isvalid helm && znap fpath _helm 'helm completion zsh'
+isvalid kitty && znap source ohmyzsh/ohmyzsh plugins/kitty
+isvalid kubectl && znap source ohmyzsh/ohmyzsh plugins/kubectl
+isvalid kubectx && znap source ohmyzsh/ohmyzsh plugins/kubectx
+isvalid kubens && znap source ohmyzsh/ohmyzsh plugins/kubens
+isvalid minikube && znap source ohmyzsh/ohmyzsh plugins/minikube
+isvalid packer && znap source ohmyzsh/ohmyzsh plugins/pass
+isvalid rg && znap fpath _rg 'rg --generate complete-zsh'
+isvalid taskw && znap source ohmyzsh/ohmyzsh plugins/taskwarrior
+isvalid terraform && znap source ohmyzsh/ohmyzsh plugins/terraform
+isvalid timew && znap source svenXY/timewarrior
+isvalid tmux && znap source ohmyzsh/ohmyzsh plugins/tmux
+isvalid vagrant && znap source ohmyzsh/ohmyzsh plugins/vagrant
+isvalid vault && znap source ohmyzsh/ohmyzsh plugins/vault
+
+# -------------------------- end of Znap ------------------------------
 
 if isvalid "rg"; then
 	export FZF_DEFAULT_COMMAND="rg --files --hidden --no-ignore-vcs --glob '!.git/*'"
@@ -112,43 +155,6 @@ if [ -f "${HOME}/.rbenv/bin/rbenv" ]; then
 	export PATH="${PATH}:${HOME}/.rbenv/bin"
 	eval "$(${HOME}/.rbenv/bin/rbenv init -)"
 fi
-
-# Load the oh-my-zsh's library.
-antigen use oh-my-zsh
-
-# Bundles from the default repo (robbyrussell's oh-my-zsh).
-#antigen bundle github < does not work with get-extras
-antigen bundle git
-isvalid git-extras && antigen bundle git-extras
-isvalid fossil && antigen bundle fossil
-isvalid fzf && antigen bundle fzf
-isvalid docker && antigen bundle docker
-isvalid docker-compose && antigen bundle docker-compose
-isvalid ripgrep && antigen bundle ripgrep
-isvalid terraform && antigen bundle terraform
-isvalid vagrant && antigen bundle vagrant
-isvalid tmux && antigen bundle tmux
-isvalid kitty && antigen bundle kitty
-antigen bundle command-not-found
-isvalid taskw && antigen bundle taskwarrior
-
-# Load the zsh-users bundles.
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle zsh-users/zsh-syntax-highlighting
-
-# other bundles.
-antigen bundle Aloxaf/fzf-tab
-antigen bundle erichs/composure
-antigen bundle denysdovhan/gitio-zsh
-antigen bundle wstein/zsh-syntax-highlighting # adapted dracula theme
-antigen bundle wstein/git-toolbelt-zsh
-isvalid timew && antigen bundle svenXY/timewarrior
-
-# Load the theme.
-antigen theme romkatv/powerlevel10k
-
-# Tell Antigen that you're done.
-antigen apply
 
 #alias ccat='ccat -C always -G Comment=red'
 #alias dcat='rougify --require ~/.config/rouge/themes/dracula_colorful.rb highlight --theme dracula_colorful'
@@ -295,8 +301,8 @@ export GPG_TTY=$(tty)
 #export PATH="$PATH:$HOME/.rvm/bin"
 
 if [ -d "/opt/homebrew/opt/ruby/bin" ]; then
-  export PATH=/opt/homebrew/opt/ruby/bin:$PATH
-  export PATH=`gem environment gemdir`/bin:$PATH
+	export PATH=/opt/homebrew/opt/ruby/bin:$PATH
+	export PATH=`gem environment gemdir`/bin:$PATH
 fi
 
 if [ -f "/usr/local/lib/antlr-4-complete.jar" ]; then
