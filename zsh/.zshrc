@@ -22,9 +22,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # put additional paths to fpath
-fpath=("${HOME}"/.local/share/zsh/site-functions $fpath)
-
-source "${HOME}"/.local/bin/antigen.zsh
+if [ -d "${HOME}"/.local/share/zsh/site-functions ]; then
+	fpath=("${HOME}"/.local/share/zsh/site-functions $fpath)
+fi
 
 # ========================== HELPER start =============================
 
@@ -53,12 +53,6 @@ mkcd() {
 # change dir and new local shell
 mklcd() {
 	mkcd "${1}" && lhist
-}
-
-# call morecompletions from command line to get completions which do not work from current .zshrc
-morecompletions() {
-	. <(taskctl completion zsh)
-	! test -f ~/.antigen/bundles/svenXY/timewarrior/_timew || . ~/.antigen/bundles/svenXY/timewarrior/_timew
 }
 
 result() {
@@ -305,4 +299,12 @@ if [ -d "/opt/homebrew/opt/ruby/bin" ]; then
   export PATH=`gem environment gemdir`/bin:$PATH
 fi
 
-export GROOVY_HOME=/opt/homebrew/opt/groovy/libexec
+if [ -f "/usr/local/lib/antlr-4-complete.jar" ]; then
+    alias antlr4="java -Xmx500M org.antlr.v4.Tool"
+    alias grun="java org.antlr.v4.gui.TestRig"
+fi
+
+if [ -d "/opt/homebrew/opt/groovy/libexec" ]; then
+	export GROOVY_HOME=/opt/homebrew/opt/groovy/libexec
+fi
+
