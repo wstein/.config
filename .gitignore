@@ -42,4 +42,7 @@
 !/JetBrains/Toolbox/.settings.json
 git/gitk
 
-zsh/*.zwc
+!/zed/
+/zsh/*.zwc
+/zed/prompts/
+/zed/conversations/
