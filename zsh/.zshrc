@@ -112,6 +112,7 @@ isvalid aws && znap source ohmyzsh/ohmyzsh plugins/aws
 isvalid az && znap source ohmyzsh/ohmyzsh plugins/azure
 isvalid docker && znap fpath _docker 'docker completion zsh'
 isvalid docker-compose && znap source ohmyzsh/ohmyzsh plugins/docker-compose
+isvalid fnm && znap fpath _fnm 'fnm completions --shell=zsh'
 isvalid fossil && znap source ohmyzsh/ohmyzsh plugins/fossil
 isvalid gcloud && znap source ohmyzsh/ohmyzsh plugins/gcloud
 isvalid gh && znap source ohmyzsh/ohmyzsh plugins/github
