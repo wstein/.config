@@ -116,10 +116,10 @@ isvalid fossil && znap source ohmyzsh/ohmyzsh plugins/fossil
 isvalid gcloud && znap source ohmyzsh/ohmyzsh plugins/gcloud
 isvalid gh && znap source ohmyzsh/ohmyzsh plugins/github
 isvalid helm && znap fpath _helm 'helm completion zsh'
+isvalid just && znap fpath _just 'just --completions=zsh'
+isvalid k9s && znap fpath _k9s 'k9s completion zsh'
 isvalid kitty && znap source ohmyzsh/ohmyzsh plugins/kitty
-isvalid kubectl && znap source ohmyzsh/ohmyzsh plugins/kubectl
-isvalid kubectx && znap source ohmyzsh/ohmyzsh plugins/kubectx
-isvalid kubens && znap source ohmyzsh/ohmyzsh plugins/kubens
+isvalid kubectl && znap fpath _kubectl 'kubectl completion zsh'
 isvalid minikube && znap source ohmyzsh/ohmyzsh plugins/minikube
 isvalid packer && znap source ohmyzsh/ohmyzsh plugins/pass
 isvalid rg && znap fpath _rg 'rg --generate complete-zsh'
