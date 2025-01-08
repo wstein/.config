@@ -25,7 +25,20 @@
     "light": "Dracula",
     "dark": "Dracula"
   },
-  "buffer_font_family": "FiraCode Nerd Font",
+  "buffer_font_family": "FiraCode Nerd Font Mono",
+  "buffer_font_features": {
+    // => >= <= 0 3 $ {. .} [] {} () =~ !~ :- =>> <<= = == === != !==
+    "ss01": true,
+    "ss02": true,
+    "ss04": true,
+    "ss06": true,
+    "ss07": true,
+    "ss09": true,
+    "cv05": true,
+    "cv14": true,
+    "cv26": true,
+    "cv28": true
+  },
   "autosave": "on_focus_change",
   "experimental.theme_overrides": {
     "syntax": {
