@@ -103,7 +103,7 @@ znap source erichs/composure
 znap source ohmyzsh/ohmyzsh lib/git plugins/{git,git-extras,fzf,command-not-found}
 znap source romkatv/powerlevel10k
 znap source wstein/git-toolbelt-zsh
-znap source wstein/zsh-syntax-highlighting # adapted dracula theme
+znap source zsh-users/zsh-syntax-highlighting
 znap source zsh-users/zsh-autosuggestions
 
 # optional plugins
