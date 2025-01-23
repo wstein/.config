@@ -97,14 +97,17 @@ lsalias() {
 
 source ~/.znap/zsh-snap/znap.zsh
 
+znap source ohmyzsh/ohmyzsh
+znap source ohmyzsh/ohmyzsh lib/git plugins/{git,git-extras,fzf,command-not-found}
 znap source Aloxaf/fzf-tab
 znap source denysdovhan/gitio-zsh
 znap source erichs/composure
-znap source ohmyzsh/ohmyzsh lib/git plugins/{git,git-extras,fzf,command-not-found}
 znap source romkatv/powerlevel10k
 znap source wstein/git-toolbelt-zsh
+# znap source marlonrichert/zsh-autocomplete
 znap source zsh-users/zsh-syntax-highlighting
 znap source zsh-users/zsh-autosuggestions
+znap source zsh-users/zsh-completions
 
 # optional plugins
 isvalid ansible && znap source ohmyzsh/ohmyzsh plugins/ansible
@@ -115,7 +118,9 @@ isvalid docker-compose && znap source ohmyzsh/ohmyzsh plugins/docker-compose
 isvalid fnm && znap fpath _fnm 'fnm completions --shell=zsh'
 isvalid fossil && znap source ohmyzsh/ohmyzsh plugins/fossil
 isvalid gcloud && znap source ohmyzsh/ohmyzsh plugins/gcloud
-isvalid gh && znap source ohmyzsh/ohmyzsh plugins/github
+if isvalid gh && gh extension list | grep -q copilot; then
+    . <(gh copilot alias -- zsh)
+fi
 isvalid helm && znap fpath _helm 'helm completion zsh'
 isvalid just && znap fpath _just 'just --completions=zsh'
 isvalid k9s && znap fpath _k9s 'k9s completion zsh'
