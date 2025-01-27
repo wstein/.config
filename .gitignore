@@ -17,7 +17,10 @@
 !/git/
 !/rouge/
 !/sakura/
+
 !/zsh/
+/zsh/*.zwc
+
 !/.vscode/
 /.vscode/extensions/
 /.vscode/cli/servers/
@@ -43,6 +46,5 @@
 git/gitk
 
 !/zed/
-/zsh/*.zwc
 /zed/prompts/
 /zed/conversations/
