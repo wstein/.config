@@ -101,7 +101,7 @@ znap source ohmyzsh/ohmyzsh
 znap source ohmyzsh/ohmyzsh lib/git plugins/{git,git-extras,fzf,command-not-found}
 znap source Aloxaf/fzf-tab
 znap source denysdovhan/gitio-zsh
-znap source erichs/composure
+# znap source erichs/composure
 znap source romkatv/powerlevel10k
 znap source wstein/git-toolbelt-zsh
 # znap source marlonrichert/zsh-autocomplete
@@ -232,6 +232,8 @@ lsalias ltga='eza --classify=auto -Tahlx --git --icons':
 
 isvalid git && alias gtlo="git log --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --tags --no-walk"
 
+alias bwz='/usr/bin/ruby -e "$(curl -fsSL https://brewiz.github.io/bin/brewiz)" --'
+
 if isvalid "\\gl"; then
 	alias gle='\\gl'
 	alias glbr='\\gl branch'
@@ -328,3 +330,25 @@ fi
 if [ -d "$HOME/.cargo/bin" ]; then
     export PATH="$HOME/.cargo/bin:$PATH"
 fi
+
+isvalid nvim && alias vim="nvim"
+
+if isvalid tre; then
+	tre() { 
+		command tre "$@" -e &&\
+		source "/tmp/tre_aliases_$USER" 2>/dev/null; 
+	}
+fi
+
+# Added by Windsurf
+#export PATH="/Users/werner/.codeium/windsurf/bin:$PATH"
+
+PATH=~/.console-ninja/.bin:$PATH
+
+# bun completions
+if [ -s "~/.bun/_bun" ]; then
+	source "/Users/werner/.bun/_bun"
+	export BUN_INSTALL="$HOME/.bun"
+	export PATH="$BUN_INSTALL/bin:$PATH"
+fi
+
