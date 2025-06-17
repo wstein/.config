@@ -177,9 +177,9 @@ alias kicat='kitty +kitten icat'
 alias kssh='kitty +kitten ssh'
 alias qscp='scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=off'
 alias qssh='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=off'
-alias qssh-copy-id='ssh-copy-id -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=off -o PreferredAuthentications=password -o PubkeyAuthentication=no'
-alias qpscp='scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=off -o PreferredAuthentications=password -o PubkeyAuthentication=no'
-alias qpssh='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=off -o PreferredAuthentications=password -o PubkeyAuthentication=no'
+alias qssh-copy-id='ssh-copy-id -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=off -o PreferredAuthentications=keyboard-interactive'
+alias qpscp='scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=off -o PreferredAuthentications=keyboard-interactive'
+alias qpssh='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=off -o PreferredAuthentications=keyboard-interactive'
 
 isvalid pwgen && alias pwg='pwgen -Bsy -r"[]{}=-+_/?\\|'"'"'\`;:@#^&*()<>~\"yYzZ"'
 
