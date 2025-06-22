@@ -86,7 +86,7 @@ lsalias() {
 	typeset VALUE=${1##*=}
 	typeset EXA_CMD=${VALUE%%:*}
 	typeset LS_CMD=${VALUE##*:}
-	if isvalid "eza"; then
+	if isvalid "lsd"; then
 		alias "${ALIAS}"="${EXA_CMD}"
 	elif [ -n "${LS_CMD}" ]; then
 		alias "${ALIAS}"="${LS_CMD}"
@@ -212,27 +212,27 @@ alias df-mount="df -hT -x devtmpfs -x tmpfs"
 isvalid qrencode && alias qrencode-ansiutf8="qrencode -t ansiutf8"
 
 alias ls="ls --color=auto"
-lsalias l='eza --classify=auto -x --icons':'ls -F -x'
-lsalias l.='eza --classify=auto -dx --icons .*':'ls -F -dx .*'
-lsalias la='eza --classify=auto -ax --icons':'ls -F -Ahlx'
-lsalias laa='eza --classify=auto -aax --icons':'ls -F -ahlx'
+lsalias l='lsd --icon=auto':'ls -F -x'
+lsalias l.='lsd -d --icon=auto .*':'ls -F -dx .*'
+lsalias la='lsd -A --icon=auto':'ls -F -Ahlx'
+lsalias laa='lsd -a --icon=auto':'ls -F -ahlx'
 
-lsalias ll='eza --classify=auto -hlx --icons --time-style long-iso':'ls -F -hl'
-lsalias ll.='eza --classify=auto -dhlx --icons --time-style long-iso .*':'ls -F -dhl .*'
-lsalias lla='eza --classify=auto -ahlx --icons --time-style long-iso':'ls -F -Ahl'
-lsalias llaa='eza --classify=auto -aahlx --icons --time-style long-iso':'ls -F -ahl'
+lsalias ll='lsd -l --icon=auto --date=+%Y-%m-%d\ %H:%M':'ls -F -hl'
+lsalias ll.='lsd -l -d --icon=auto --date=+%Y-%m-%d\ %H:%M .*':'ls -F -dhl .*'
+lsalias lla='lsd -l -A --icon=auto --date=+%Y-%m-%d\ %H:%M':'ls -F -Ahl'
+lsalias llaa='lsd -l -a --icon=auto --date=+%Y-%m-%d\ %H:%M':'ls -F -ahl'
 
-lsalias lg='eza --classify=auto -hlx --git --icons --time-style long-iso':
-lsalias lg.='eza --classify=auto -dhlx --git --icons --time-style long-iso .*':
-lsalias lga='eza --classify=auto -ahlx --git --icons --time-style long-iso':
-lsalias lgaa='eza --classify=auto -aahlx --git --icons --time-style long-iso':
+lsalias lg='lsd -l --git --icon=auto --date=relative':
+lsalias lg.='lsd -l -d --git --icon=auto --date=relative .*':
+lsalias lga='lsd -l -A --git --icon=auto --date=relative':
+lsalias lgaa='lsd -l -a --git --icon=auto --date=relative':
 
-lsalias lt='eza --classify=auto -Thlx --icons':
-lsalias lt.='eza --classify=auto -Tdhlx --icons .*':
-lsalias lta='eza --classify=auto -Tahlx --icons':
-lsalias ltg='eza --classify=auto -Thlx --git --icons':
-lsalias ltg.='eza --classify=auto -Tdhlx --git --icons .*':
-lsalias ltga='eza --classify=auto -Tahlx --git --icons':
+lsalias lt='lsd --tree -l --icon=auto':
+lsalias lt.='lsd --tree -l -d --icon=auto .*':
+lsalias lta='lsd --tree -l -A --icon=auto':
+lsalias ltg='lsd --tree -l --git --icon=auto':
+lsalias ltg.='lsd --tree -l -d --git --icon=auto .*':
+lsalias ltga='lsd --tree -l -A --git --icon=auto':
 
 isvalid git && alias gtlo="git log --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --tags --no-walk"
 
